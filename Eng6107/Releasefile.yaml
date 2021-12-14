@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Tue Dec 14 12:41:25 IST 2021
+# Date created:         Tue Dec 14 12:46:37 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,10 @@ kind: Templates
 metadata:
   home: ENG-6107
 spec:
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.gitHub.NewOneTestDAI.password
+    value: !value "xlrelease_PasswordStringVariable_folder_gitHub_NewOneTestDAI_password_value"
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
