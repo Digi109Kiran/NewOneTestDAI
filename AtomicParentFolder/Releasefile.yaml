@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 14:41:24 IST 2021
+# Date created:         Fri Dec 17 16:37:59 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -42,19 +42,6 @@ spec:
       - name: Check Two Manual task
         type: xlrelease.ScriptTask
         script: print('This Is Parallel Two Jython Task')
-    - name: Check Sequential Task
-      type: xlrelease.SequentialGroup
-      tasks:
-      - name: Check One Seq task
-        type: xlrelease.ScriptTask
-        script: |-
-          print('This Is Seq One Jython Task')
-          return true
-      - name: Check Two Seq Task
-        type: xlrelease.ScriptTask
-        script: |-
-          print('This Is Seq Two Jython Task')
-          return true
     color: '#3D6C9E'
   - phase: Phase Atomic II
     tasks:
@@ -82,6 +69,11 @@ spec:
       jobName: TestJob
       variableMapping:
         pythonScript.password: "${global.localJenkinsPassword}"
+    - name: Webhook task
+      type: webhook.WaitForJsonEvent
+      endpoint: Atomic Webhook
+      variableMapping:
+        pythonScript.event: "${CheckReleaseVariable}"
     color: '#3D6C9E'
   variables:
   - type: xlrelease.StringVariable
@@ -169,6 +161,22 @@ spec:
   variableMapping:
     scriptUserPassword: "${global.globalAdminPassword}"
   riskProfile: Default risk profile
+- name: Atomicrigger
+  type: events.EventBasedTrigger
+  enabled: false
+  mappedProperties:
+  - type: xlrelease.StringValue
+    targetProperty: releaseTitle
+    value: Atomic Apply Release
+  - type: xlrelease.StringValue
+    targetProperty: template
+    value: Atomic Apply Template
+  - type: xlrelease.StringValue
+    targetProperty: releaseFolder
+    value: ./
+  triggerActionType: xlrelease.CreateReleaseFromTemplateAction
+  eventSource: Atomic Webhook
+  eventType: events.HttpRequestEvent
 - directory: Atmomic Child Folder
   children:
   - template: Atomic Apply Template
