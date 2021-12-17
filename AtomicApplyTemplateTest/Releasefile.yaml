@@ -1,0 +1,366 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      10.2.0-20210603-123974
+# Date created:         Fri Dec 17 16:46:15 IST 2021
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: Atomic Apply
+spec:
+- template: Atomic Apply Template
+  scheduledStartDate: 2021-12-17T09:00:00+05:30
+  dueDate: 2021-12-17T10:00:00+05:30
+  phases:
+  - phase: Phase Atomic
+    tasks:
+    - name: Check Manual Task
+      type: xlrelease.Task
+    - name: Check Jython Task
+      type: xlrelease.ScriptTask
+      script: print('This Is Jython Task')
+    - name: Check Gate Task
+      type: xlrelease.GateTask
+      conditions:
+      - name: First Condition
+        type: xlrelease.GateCondition
+      - name: Second Condition
+        type: xlrelease.GateCondition
+    - name: Check Precondition in Task
+      type: xlrelease.Task
+      precondition: |-
+        if(releaseVariables['CheckReleaseVariable'] == 'DoneCheckReleaseVariable')
+            return true
+        else
+            return false
+    - name: Check Parallel Task
+      type: xlrelease.ParallelGroup
+      tasks:
+      - name: Check One Manual task
+        type: xlrelease.ScriptTask
+        script: print('This Is Parallel One Jython Task')
+      - name: Check Two Manual task
+        type: xlrelease.ScriptTask
+        script: print('This Is Parallel Two Jython Task')
+    - name: Check Sequential Task
+      type: xlrelease.SequentialGroup
+      tasks:
+      - name: Check One Seq task
+        type: xlrelease.ScriptTask
+        script: print('This Is Seq One Jython Task')
+      - name: Check Two Seq Task
+        type: xlrelease.ScriptTask
+        script: print('This Is Seq Two Jython Task')
+    color: '#3D6C9E'
+  - phase: Phase Atomic II
+    tasks:
+    - name: Check Gate Task One Updated
+      type: xlrelease.GateTask
+      conditions:
+      - name: New Condition
+        type: xlrelease.GateCondition
+      dependencies:
+      - type: xlrelease.Dependency
+        targetId: "${CheckReleaseVariable}"
+    - name: Check Pattern Task
+      type: delivery.CreateDelivery
+      ^title: Check Atomic Pattern delivery
+      pattern: Test/Check Atomic Pattern
+      folder: Test
+    - name: Check User Input Task
+      type: xlrelease.UserInputTask
+      variables:
+      - CheckReleaseVariable
+    - name: Check Jenkins Task
+      type: jenkins.Build
+      jenkinsServer: Jenkins Global Local
+      username: admin
+      jobName: TestJob
+      variableMapping:
+        pythonScript.password: "${global.localJenkinsPassword}"
+    color: '#3D6C9E'
+  variables:
+  - type: xlrelease.StringVariable
+    key: CheckReleaseVariable
+    requiresValue: false
+    showOnReleaseStart: false
+    value: DoneCheckReleaseVariable
+  scriptUsername: admin
+  extensions:
+  - name: Dashboard
+    type: xlrelease.Dashboard
+    owner: admin
+    tiles:
+    - name: Release progress
+      type: xlrelease.ReleaseProgressTile
+    - name: Release summary
+      type: xlrelease.ReleaseSummaryTile
+      row: 2
+    - name: Resource usage
+      type: xlrelease.ResourceUsageTile
+      row: 4
+    - name: Release timeline
+      type: xlrelease.TimelineTile
+      row: 3
+    - name: Release health
+      type: xlrelease.ReleaseHealthTile
+    - name: Current applications
+      type: deployment.CurrentApplicationsTile
+      row: 4
+      col: 2
+      filters:
+      - type: xlrelease.DateFilter
+        timeFrame: LAST_MONTH
+    - name: Release summary
+      type: xlrelease.ReleaseSummaryTile
+    - name: Release timeline
+      type: xlrelease.TimelineTile
+    - name: Tile with custom config
+      type: test.TestTileCustomConfig
+      row: 2
+      col: 1
+      supportedScopes:
+      - release
+      - folder
+      - global
+    - name: Total deployments
+      type: deployment.TotalDeploymentsTile
+      row: 2
+      col: 2
+      filters:
+      - type: xlrelease.DateFilter
+        timeFrame: LAST_MONTH
+    - name: Tile with default config
+      type: test.TestTileDefaultConfig
+      row: 5
+      col: 0
+      supportedScopes:
+      - release
+      - folder
+      - global
+    - name: Default Tile Example
+      type: test.DefaultTileExample
+      row: 5
+      col: 1
+      supportedScopes:
+      - release
+      - folder
+      - global
+    - name: Tile with large data
+      type: test.LargeDataTestTile
+      row: 5
+      col: 2
+      supportedScopes:
+      - release
+      - folder
+      - global
+    - name: Tile with no config
+      type: test.TestTileNoConfig
+      row: 6
+      col: 0
+      supportedScopes:
+      - release
+      - folder
+      - global
+  variableMapping:
+    scriptUserPassword: "${global.globalAdminPassword}"
+  riskProfile: Default risk profile
+- notifications:
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is overdue.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: TASK_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Team
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
+    body: |-
+      **Your audit report was aborted!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: MANUAL_TASK_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started and is assigned to you or your team.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Task Owner
+  - notification: TASK_FAILED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has failed.
+
+      Other tasks could still be in progress, but the release will stop after they complete.
+
+      You can retry the task, reassign it to somebody else or abort the release.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
+  - notification: COMMENT_ADDED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      **${comment.authorFullName}** commented on the **${task.title}** task in the **${release.title}** release:
+
+      ${comment.text}
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: RELEASE_FAILED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release has failed due to a task failure.
+
+      The release is now stopped.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: TASK_DUE_SOON
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is due in **${task.dueInHours}** hours and **${task.dueInMinutes}** minutes.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: ACTIVE_TASK_UNASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is active but not assigned to anyone anymore.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: RELEASE_FAILING
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release is failing due to a task failure.
+
+      Other tasks may still be in progress, but the release will stop after they complete.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: RELEASE_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The status of the **${release.title}** release was changed to **${release.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Release Admin
+  - notification: MANUAL_TASK_STARTED_WITHOUT_OWNER
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started, but it is not assigned.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Release Admin
+  - notification: RELEASE_COMPLETED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been completed."
+    roles:
+    - Release Admin
+  - notification: TASK_WAITING_FOR_INPUT
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release needs your input.
+
+      Please enter the required information so the release can continue.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_COMPLETED
+    priority: Normal
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
+  - notification: RELEASE_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been started."
+    bulkSubject: "[Release] Multiple releases started"
+    bulkBody: |-
+      The following releases have been started:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
+    bulkSubject: "[Release] Multiple releases aborted"
+    bulkBody: |-
+      The following releases have been aborted:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: ACTIVE_TASK_ASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: "The active task **${task.title}** in the **${release.title}** release is\
+      \ now assigned to ${task.ownerFullName}."
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
