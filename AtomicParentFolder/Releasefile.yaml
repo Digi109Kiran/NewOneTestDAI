@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:40:27 IST 2021
+# Date created:         Fri Dec 17 16:43:27 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,10 @@ kind: Templates
 metadata:
   home: Atomic Parent Folder
 spec:
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.check1.password
+    value: !value "xlrelease_PasswordStringVariable_folder_check1_password_value"
 - template: Atomic Apply Template
   scheduledStartDate: 2021-12-17T09:00:00+05:30
   dueDate: 2021-12-17T10:00:00+05:30
@@ -160,6 +164,14 @@ spec:
       - global
   variableMapping:
     scriptUserPassword: "${global.globalAdminPassword}"
+  riskProfile: Default risk profile
+- template: Atomic Apply Template v1
+  scheduledStartDate: 2021-12-17T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    color: '#3D6C9E'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Atomic_Apply_Template_v1_scriptUserPassword"
   riskProfile: Default risk profile
 - name: AtomicTrigger
   type: events.EventBasedTrigger
