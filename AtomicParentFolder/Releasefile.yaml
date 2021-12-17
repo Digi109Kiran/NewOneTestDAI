@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:38:36 IST 2021
+# Date created:         Fri Dec 17 16:39:51 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -161,7 +161,7 @@ spec:
   variableMapping:
     scriptUserPassword: "${global.globalAdminPassword}"
   riskProfile: Default risk profile
-- name: AtomicTrigger
+- name: AtomicTriggers
   type: events.EventBasedTrigger
   enabled: false
   mappedProperties:
@@ -213,15 +213,6 @@ spec:
         - name: Check Two Manual task
           type: xlrelease.ScriptTask
           script: print('This Is Parallel Two Jython Task')
-      - name: Check Sequential Task
-        type: xlrelease.SequentialGroup
-        tasks:
-        - name: Check One Seq task
-          type: xlrelease.ScriptTask
-          script: print('This Is Seq One Jython Task')
-        - name: Check Two Seq Task
-          type: xlrelease.ScriptTask
-          script: print('This Is Seq Two Jython Task')
       color: '#3D6C9E'
     - phase: Phase Atomic II
       tasks:
