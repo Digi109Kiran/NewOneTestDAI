@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 14:33:16 IST 2021
+# Date created:         Fri Dec 17 14:33:54 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -64,7 +64,7 @@ spec:
         targetId: "${CheckReleaseVariable}"
     - name: Check Pattern Task
       type: delivery.CreateDelivery
-      ^title: Check Atomic Pattern delivery
+      ^title: Check Atomic Pattern delivery One
       pattern: Test/Check Atomic Pattern
       folder: Test
     - name: Check User Input Task
