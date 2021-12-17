@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:48:14 IST 2021
+# Date created:         Fri Dec 17 16:49:01 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -155,6 +155,17 @@ spec:
       - global
   variableMapping:
     scriptUserPassword: "${global.globalAdminPassword}"
+  riskProfile: Default risk profile
+- template: Atomic Apply Template v1.1
+  scheduledStartDate: 2021-12-17T09:00:00+05:30
+  phases:
+  - phase: Phase One
+    tasks:
+    - name: Task One
+      type: xlrelease.Task
+    color: '#3D6C9E'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Atomic_Apply_Template_v1_1_scriptUserPassword"
   riskProfile: Default risk profile
 - notifications:
   - notification: TASK_OVERDUE
