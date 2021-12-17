@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      10.2.0-20210603-123974
-# Date created:         Fri Dec 17 16:37:59 IST 2021
+# Date created:         Fri Dec 17 16:38:36 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -161,7 +161,7 @@ spec:
   variableMapping:
     scriptUserPassword: "${global.globalAdminPassword}"
   riskProfile: Default risk profile
-- name: Atomicrigger
+- name: AtomicTrigger
   type: events.EventBasedTrigger
   enabled: false
   mappedProperties:
