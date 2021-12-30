@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Dec 30 14:00:09 IST 2021
+# Date created:         Thu Dec 30 14:02:50 IST 2021
 
 ---
 apiVersion: xl-release/v1
@@ -26,6 +26,7 @@ spec:
   riskProfile: Default risk profile
 - template: Test_UI_Template_2
   scheduledStartDate: 2021-12-30T09:00:00+05:30
+  dueDate: 2021-12-30T10:00:00+05:30
   phases:
   - phase: Phase 1
     tasks:
