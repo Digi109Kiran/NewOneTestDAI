@@ -1,16 +1,16 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Jan 06 17:31:20 IST 2022
+# Date created:         Thu Jan 06 17:33:22 IST 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: ENG-8677-B
+  home: ENG-8677-A
 spec:
-- template: ENG-8677-B-Template
-  scheduledStartDate: 2022-01-06T17:28:31.906+05:30
-  dueDate: 2022-01-06T18:28:31.906+05:30
+- template: ENG-8677-A-Template
+  scheduledStartDate: 2022-01-06T17:27:03.849+05:30
+  dueDate: 2022-01-06T18:27:03.849+05:30
   phases:
   - phase: DEV
     tasks:
@@ -75,14 +75,14 @@ spec:
       - name: Environment is available
         type: xlrelease.GateCondition
   riskProfile: Default risk profile
-- name: Trigger-B
+- name: Trigger-A
   type: test.TestTrigger
-  releaseTitle: 8677BTemplate
-  template: ENG-8677-B-Template
+  releaseTitle: 8677ATemplate
+  template: ENG-8677-A-Template
   releaseFolder: ./
   count: 1
   username: admin
-  password: !value "test_TestTrigger_Trigger_B_password"
+  password: !value "test_TestTrigger_Trigger_A_password"
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
