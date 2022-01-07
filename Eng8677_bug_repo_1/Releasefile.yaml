@@ -1,30 +1,13 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Fri Jan 07 18:48:30 IST 2022
+# Date created:         Fri Jan 07 19:03:45 IST 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: ENG-8677-A
+  home: ENG-8677-B
 spec:
-- template: Template A
-  scheduledStartDate: 2022-01-07T09:00:00+05:30
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: Task One
-      type: xlrelease.Task
-  riskProfile: Default risk profile
-- name: Trigger A
-  type: git.Poll
-  enabled: false
-  releaseTitle: ReleaseAFolder
-  template: Template A
-  releaseFolder: ./
-  gitRepository: NewOneTestDAI-Repo-Global
-  username: admin
-  password: !value "git_Poll_Trigger_A_password"
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
