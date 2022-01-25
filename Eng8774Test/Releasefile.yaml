@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Tue Jan 25 17:37:47 IST 2022
+# Date created:         Tue Jan 25 17:38:51 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -10,9 +10,10 @@ metadata:
 spec:
 - name: Jenkins-Folder-Repo
   type: jenkins.Server
+  variableMapping:
+    password: "${global.jenkins-global-Password}"
   url: http://localhost:8082/
   username: admin
-  password: !value "jenkins_Server_Jenkins_Folder_Repo_password"
 - template: Template8774Test
   scheduledStartDate: 2022-01-25T09:00:00+05:30
   phases:
