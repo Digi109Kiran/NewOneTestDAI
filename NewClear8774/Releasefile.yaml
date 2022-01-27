@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Jan 27 16:29:37 IST 2022
+# Date created:         Thu Jan 27 18:57:34 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -8,21 +8,13 @@ kind: Templates
 metadata:
   home: NewClear8774
 spec:
-- name: Jenkins-folder-local
-  type: jenkins.Server
-  variableMapping:
-    password: "${global.jenkins-global-Password}"
-  url: http://localhost:8082/
-  username: admin
 - template: NewClearTemplate8774
   scheduledStartDate: 2022-01-27T09:00:00+05:30
   dueDate: 2022-01-27T10:00:00+05:30
   phases:
   - phase: Phase One
     tasks:
-    - name: Simple Task
-      type: xlrelease.Task
-    - name: Task Jenkins
+    - name: Task One Jenkins
       type: jenkins.Build
       jenkinsServer: Jenkins-folder-local
       username: admin
