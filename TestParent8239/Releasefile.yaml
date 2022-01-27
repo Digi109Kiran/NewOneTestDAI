@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Jan 27 14:32:35 IST 2022
+# Date created:         Thu Jan 27 14:37:47 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: TestParentTemplate8239
   scheduledStartDate: 2022-01-27T09:00:00+05:30
+  dueDate: 2022-01-27T10:00:00+05:30
   phases:
   - phase: Phase One
     tasks:
