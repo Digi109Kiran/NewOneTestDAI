@@ -1,10 +1,13 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Feb 24 17:59:21 IST 2022
+# Date created:         Fri Feb 25 12:30:32 IST 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
   home: ENG-8605
-spec: []
+spec:
+- directory: A
+  children:
+  - directory: B
