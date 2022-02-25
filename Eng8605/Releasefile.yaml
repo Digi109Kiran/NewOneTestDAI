@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Fri Feb 25 12:30:32 IST 2022
+# Date created:         Fri Feb 25 12:37:35 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -11,3 +11,9 @@ spec:
 - directory: A
   children:
   - directory: B
+    children:
+    - template: TemplateBCheck
+      scheduledStartDate: 2022-02-25T09:00:00+05:30
+      phases:
+      - phase: New Phase
+      riskProfile: Default risk profile
