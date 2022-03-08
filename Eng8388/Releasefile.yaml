@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Tue Mar 08 14:47:20 IST 2022
+# Date created:         Tue Mar 08 14:52:34 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -19,6 +19,13 @@ spec:
       type: xlrelease.Task
     - name: Task Three
       type: xlrelease.Task
+    - name: Task Jenkins
+      type: jenkins.Build
+      jenkinsServer: Jenkins-Local-Global
+      username: admin
+      jobName: NewTask
+      variableMapping:
+        pythonScript.password: "${global.jenkins-local-password}"
     color: '#3d6c9e'
   riskProfile: Default risk profile
 - notifications:
