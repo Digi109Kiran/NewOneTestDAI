@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Tue Mar 15 13:09:50 IST 2022
+# Date created:         Tue Mar 15 13:14:04 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -8,6 +8,10 @@ kind: Templates
 metadata:
   home: ENG-8388
 spec:
+- folderVariables:
+  - type: xlrelease.PasswordStringVariable
+    key: folder.jenkins-local-password
+    value: !value "xlrelease_PasswordStringVariable_folder_jenkins_local_password_value"
 - template: 8388Template1
   scheduledStartDate: 2022-03-08T09:00:00+05:30
   dueDate: 2022-03-08T10:00:00+05:30
@@ -26,7 +30,7 @@ spec:
       username: admin
       jobName: NewTask
       variableMapping:
-        pythonScript.password: "${global.jenkins-local-password}"
+        pythonScript.password: "${folder.jenkins-local-password}"
     color: '#3d6c9e'
   riskProfile: Default risk profile
 - notifications:
