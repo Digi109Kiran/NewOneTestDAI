@@ -1,23 +1,22 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Mar 21 13:36:06 IST 2022
+# Date created:         Mon Mar 21 13:39:02 IST 2022
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: ENG-3833A
+  home: ENG-3833B
 spec:
-- template: AOnlyTemplate
+- template: BTemplateOnly
   scheduledStartDate: 2022-03-21T09:00:00+05:30
   phases:
   - phase: Phase One
     tasks:
     - name: Task One
-      type: xlrelease.Task
-    - name: Task Two
-      type: xlrelease.Task
-    - name: Task  Three
-      type: xlrelease.Task
+      type: xlrelease.ExternalScriptTask
+      url: ENG-3833A
+      username: user1
+      password: !value "xlrelease_ExternalScriptTask_Task_One_password"
     color: '#3d6c9e'
   riskProfile: Default risk profile
