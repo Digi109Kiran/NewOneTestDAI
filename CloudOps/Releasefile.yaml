@@ -1,0 +1,357 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Wed Jul 20 17:01:44 IST 2022
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: CloudOps
+spec:
+- template: Onboard on-prem with Identity Service
+  scheduledStartDate: 2022-07-15T12:30:00+05:30
+  dueDate: 2022-07-15T13:30:00+05:30
+  phases:
+  - phase: Setup Identity Service
+    tasks:
+    - name: Get Release installation URL
+      type: xlrelease.UserInputTask
+      description: Please check the URL below. It should be a valid URL pointing to
+        the address where Digital.ai Release will be installed.
+      owner: "${release.owner}"
+      team: Dai-admin
+      variables:
+      - releaseUrl
+    - name: Create customer account in Identity Service
+      type: xlrelease.Task
+      description: |-
+        Go to the Digital.ai Tenant Management Console at [${customerManagementUrl}/accounts](${customerManagementUrl}/accounts)
+
+        Log in through with your own username and password through the 'Azure AD' authentication option.
+
+        In order to add an account, you need to be in the `dai-admin` role. You can check this on your [Profile](${customerManagementUrl}/profile) page.
+
+        Go to the [Accounts](${customerManagementUrl}/accounts)  page and press the `+` icon on the right hand side of the page.
+
+        Enter the **Name** of the customer and the prefix of the **Vanity Domain**, for example 'acme'.
+      team: Dai-admin
+      tags:
+      - PROD
+      - CloudOps
+    - name: Get OIDC credentials
+      type: xlrelease.UserInputTask
+      description: |-
+        ### Adding the Release client
+         1. Still in the [Digital.ai Platform](${customerManagementUrl}), got the account that was just created.
+         2. Go to **Clients** section and press the **Add OIDC Client** button
+         3. Give the client a name, for example 'MyClient-Release'. (Check: this name may need to be unique across all clients)
+         4. Scroll down to "Valid Redirect URIs" and add `${releaseUrl}/oidc-login`
+        This should be the valid URL that points to your upcoming Release installation!
+
+         5. Save the client
+
+        6. Open the client
+
+        7. Copy the needed values into the form below.
+      team: Dai-admin
+      variables:
+      - clientId
+      - clientSecret
+    - name: Configure Release users in Identity Service
+      type: xlrelease.Task
+      description: |-
+        In the Identity Service, add users for the client to log in to Release.
+
+        For testing purposes, connect to the AD of Digital.ai itself
+    color: '#ff9e49'
+  - phase: Install Release
+    tasks:
+    - name: Install Release on K8S with Operator
+      type: xlrelease.Task
+      description: |-
+        ### Release installation
+
+        Install Release using the Kubernetes Operator installer as described in [Installing Release Using Kubernetes Operator](https://docs.digital.ai/bundle/devops-release-version-v.22.1/page/release/how-to/k8s-operator/install-release-using-k8s-operator.html)
+
+
+        #### OIDC configuration
+
+        In **Step 5—Update the default Custom Resource Definitions** use the following values to configure the `oidc` section in `diarelease_cr.yaml`
+
+         ```
+           oidc:
+             enabled: true
+             accessTokenUri: "${identityServerUrl}/auth/realms/demoaccount/protocol/openid-connect/token"
+             clientId: "${clientId}"
+             clientSecret: "${clientSecret}"
+             emailClaim: email
+             external: true
+             fullNameClaim: name
+             issuer: "${identityServerUrl}/auth/realms/demoaccount"
+             keyRetrievalUri: "${identityServerUrl}/auth/realms/demoaccount/protocol/openid-connect/certs"
+             logoutUri: "${identityServerUrl}/auth/realms/demoaccount/protocol/openid-connect/logout"
+             postLogoutRedirectUri: "${releaseUrl}/oidc-login"
+             redirectUri: "${releaseUrl}/oidc-login"
+             rolesClaim: groups
+             userAuthorizationUri: "${identityServerUrl}/auth/realms/demoaccount/protocol/openid-connect/auth"
+             userNameClaim: preferred_username
+             scopes: ["openid"]
+         ```
+
+        **Note**
+         accessTokenUri, issuer, keyRetrievalUri, logoutUri, userAuthorizationUri can be found in the Identity Service UI also. There is a button 'Download OIDC config' under Clients page. These properties are saved in this config.
+      team: CloudOps
+    - name: Log in to Release
+      type: xlrelease.Task
+      description: |-
+        ### Smoke test
+
+        Go to the newly installed Release server running at ${releaseUrl} and log in.
+
+        **TODO**
+        * Which user
+      team: CloudOps
+    color: '#498500'
+  variables:
+  - type: xlrelease.StringVariable
+    key: customer
+    label: Customer name
+    description: Display name of the new customer
+  - type: xlrelease.StringVariable
+    key: customerID
+    label: Customer ID
+    description: Used for the vanity domain. For example:enter 'acme' for a domain
+      like  acme.chamnpagne.digital.ai
+  - type: xlrelease.StringVariable
+    key: releaseUrl
+    requiresValue: false
+    label: Release URL
+    description: The URL Release is running on. The Identity Service will redirect
+      the user to this URL after successful login.
+    value: "https://${customerID}.devops.digital.ai"
+  - type: xlrelease.StringVariable
+    key: customerManagementUrl
+    requiresValue: false
+    label: Digital.ai Platform URL
+    description: Address of the Digital.ai Platform application to manage customers
+    value: https://digitalai.staging.digital.ai
+  - type: xlrelease.StringVariable
+    key: identityServerUrl
+    requiresValue: false
+    label: Identity Server
+    description: URL of the OIDC Identity Server
+    value: https://identity.staging.digital.ai
+  - type: xlrelease.StringVariable
+    key: clientSecret
+    requiresValue: false
+    showOnReleaseStart: false
+    label: Client Secret (OIDC)
+    description: The client secret needed to connect Release with the Identity Service
+      over the OIDC protocol.
+  - type: xlrelease.StringVariable
+    key: clientId
+    requiresValue: false
+    showOnReleaseStart: false
+    label: Client ID (OIDC)
+    description: The client ID needed to connect Release with the Identity Service
+      over the OIDC protocol.
+  riskProfile: Default risk profile
+- notifications:
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is overdue.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: TASK_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Team
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
+    body: |-
+      **Your audit report was aborted!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: MANUAL_TASK_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started and is assigned to you or your team.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Task Owner
+  - notification: TASK_FAILED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has failed.
+
+      Other tasks could still be in progress, but the release will stop after they complete.
+
+      You can retry the task, reassign it to somebody else or abort the release.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
+  - notification: COMMENT_ADDED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      **${comment.authorFullName}** commented on the **${task.title}** task in the **${release.title}** release:
+
+      ${comment.text}
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: RELEASE_FAILED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release has failed due to a task failure.
+
+      The release is now stopped.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: TASK_DUE_SOON
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is due in **${task.dueInHours}** hours and **${task.dueInMinutes}** minutes.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: ACTIVE_TASK_UNASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is active but not assigned to anyone anymore.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: RELEASE_FAILING
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release is failing due to a task failure.
+
+      Other tasks may still be in progress, but the release will stop after they complete.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: RELEASE_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The status of the **${release.title}** release was changed to **${release.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Release Admin
+  - notification: MANUAL_TASK_STARTED_WITHOUT_OWNER
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started, but it is not assigned.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Release Admin
+  - notification: RELEASE_COMPLETED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been completed."
+    roles:
+    - Release Admin
+  - notification: TASK_WAITING_FOR_INPUT
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release needs your input.
+
+      Please enter the required information so the release can continue.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_COMPLETED
+    priority: Normal
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
+  - notification: RELEASE_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been started."
+    bulkSubject: "[Release] Multiple releases started"
+    bulkBody: |-
+      The following releases have been started:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
+    bulkSubject: "[Release] Multiple releases aborted"
+    bulkBody: |-
+      The following releases have been aborted:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: ACTIVE_TASK_ASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: "The active task **${task.title}** in the **${release.title}** release is\
+      \ now assigned to ${task.ownerFullName}."
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
