@@ -1,0 +1,925 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Fri Aug 26 17:48:29 IST 2022
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: D-22429
+spec:
+- template: ABD
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ABDUL
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Alabama
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Alaska
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Arizona
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Arkansas
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: California
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Colorado
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Connecticut
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: DAC
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    - name: Task 2
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_DAC_scriptUserPassword"
+  riskProfile: Default risk profile
+- template: DEEPAN
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    - name: Task 2
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_DEEPAN_scriptUserPassword"
+  riskProfile: Default risk profile
+- template: DUBAI
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Delaware
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ELSTIN
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ENGLAND
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ERM
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  riskProfile: Default risk profile
+- template: ERM-1
+  scheduledStartDate: 2022-08-26T09:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ERM-2
+  scheduledStartDate: 2022-08-26T09:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ERM-3
+  scheduledStartDate: 2022-08-26T09:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: EZHIL
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Florida
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: GNANAMOORTHY
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: GOKUL
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Georgia
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Greece
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: HARI
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: HARIHARAN
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Hawai
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: SAI
+  riskProfile: Default risk profile
+- template: INDIA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    - name: Task 2
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_INDIA_scriptUserPassword"
+  riskProfile: Default risk profile
+- template: INDONESIA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: SAI
+  riskProfile: Default risk profile
+- template: ISSAC
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: SAI
+  riskProfile: Default risk profile
+- template: Idaho
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Illinois
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Indiana
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Iowa
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Italy
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: JAGA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: JAYGANESH
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: JHA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: JOHN
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: KAM
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: KARTHIK
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: KIRAN
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Kansas
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    - name: Task 2
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Kansas_scriptUserPassword"
+  riskProfile: Default risk profile
+- template: Kentucky
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: LONDON
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Louisiana
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: MALAYASIA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: MANI
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: MInnesota
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: MOHAN
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Maine
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Maryland
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: SAI
+  riskProfile: Default risk profile
+- template: Massachisetts
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Michigan
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Missisippi
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Missouri
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Montana
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: NARYANA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: SAI
+  riskProfile: Default risk profile
+- template: Nagu
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Nebraska
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Netherlands
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Nevada
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: New Hampshire
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: New Jersey
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: New Mexico
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: New York
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: North Carolina
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: North Dakota
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Ohio
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    - name: Task 2
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_Ohio_scriptUserPassword"
+  riskProfile: Default risk profile
+- template: Oklahoma
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Oregon
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: PADY
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Pennsylvania
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: RAGHU
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: RAM
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: RIFU
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: ROSHNI
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Rhode Island
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: SAI
+  riskProfile: Default risk profile
+- template: Rome
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Russia
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SAINATH
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SAM
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SARA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SARAVANAR
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SINGAPORE
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SRI
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SRI LANKA
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: SRIDHAR
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: South Carolina
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: South Dakota
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Swizerland
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: TAM
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: Phase 1
+    tasks:
+    - name: Task 1
+      type: xlrelease.Task
+    - name: Task 2
+      type: xlrelease.Task
+    color: '#3d6c9e'
+  scriptUsername: admin
+  scriptUserPassword: !value "xlrelease_Release_TAM_scriptUserPassword"
+  riskProfile: Default risk profile
+- template: Tennesse
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Texas
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Ukraine
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Utah
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: VIGNESH
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: VINCENT
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: VIRU
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Venice
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Vermount
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Viriginia
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Washington
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: West Virginia
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Wisconsin
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- template: Wyoming
+  scheduledStartDate: 2022-08-25T09:00:00+05:30
+  dueDate: 2022-08-25T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  riskProfile: Default risk profile
+- name: TestDashboard
+  type: xlrelease.BlankDashboard
+  owner: admin
+  tiles:
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+      timeFrame: LAST_MONTH
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+- notifications:
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is overdue.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: TASK_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Team
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
+    body: |-
+      **Your audit report was aborted!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: MANUAL_TASK_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started and is assigned to you or your team.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Task Owner
+  - notification: TASK_FAILED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has failed.
+
+      Other tasks could still be in progress, but the release will stop after they complete.
+
+      You can retry the task, reassign it to somebody else or abort the release.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
+  - notification: COMMENT_ADDED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      **${comment.authorFullName}** commented on the **${task.title}** task in the **${release.title}** release:
+
+      ${comment.text}
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: RELEASE_FAILED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release has failed due to a task failure.
+
+      The release is now stopped.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: TASK_DUE_SOON
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is due in **${task.dueInHours}** hours and **${task.dueInMinutes}** minutes.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: ACTIVE_TASK_UNASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is active but not assigned to anyone anymore.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: RELEASE_FAILING
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release is failing due to a task failure.
+
+      Other tasks may still be in progress, but the release will stop after they complete.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: RELEASE_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The status of the **${release.title}** release was changed to **${release.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Release Admin
+  - notification: MANUAL_TASK_STARTED_WITHOUT_OWNER
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started, but it is not assigned.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Release Admin
+  - notification: RELEASE_COMPLETED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been completed."
+    roles:
+    - Release Admin
+  - notification: TASK_WAITING_FOR_INPUT
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release needs your input.
+
+      Please enter the required information so the release can continue.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_COMPLETED
+    priority: Normal
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
+  - notification: RELEASE_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been started."
+    bulkSubject: "[Release] Multiple releases started"
+    bulkBody: |-
+      The following releases have been started:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
+    bulkSubject: "[Release] Multiple releases aborted"
+    bulkBody: |-
+      The following releases have been aborted:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: ACTIVE_TASK_ASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: "The active task **${task.title}** in the **${release.title}** release is\
+      \ now assigned to ${task.ownerFullName}."
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
