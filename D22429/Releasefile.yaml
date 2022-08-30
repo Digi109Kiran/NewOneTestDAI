@@ -1,6 +1,6 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Fri Aug 26 17:48:29 IST 2022
+# Date created:         Tue Aug 30 12:43:42 IST 2022
 
 ---
 apiVersion: xl-release/v1
@@ -8,11 +8,20 @@ kind: Templates
 metadata:
   home: D-22429
 spec:
+- name: D-22429_ENDP
+  type: events.PostWebhookEndpoint
+  path: testpoint
+  authentication:
+    type: events.NoAuthentication
 - template: ABD
   scheduledStartDate: 2022-08-25T09:00:00+05:30
   dueDate: 2022-08-25T10:00:00+05:30
   phases:
   - phase: New Phase
+    tasks:
+    - name: Task One
+      type: xlrelease.Task
+      owner: admin
   riskProfile: Default risk profile
 - template: ABDUL
   scheduledStartDate: 2022-08-25T09:00:00+05:30
@@ -724,6 +733,22 @@ spec:
       filters:
       - type: xlrelease.FolderFilter
         folder: ./
+- name: Test-Trigger
+  type: events.EventBasedTrigger
+  description: Test-Trigger
+  mappedProperties:
+  - type: xlrelease.StringValue
+    targetProperty: releaseTitle
+    value: Test-Release
+  - type: xlrelease.StringValue
+    targetProperty: template
+    value: Kentucky
+  - type: xlrelease.StringValue
+    targetProperty: releaseFolder
+    value: ./
+  triggerActionType: xlrelease.CreateReleaseFromTemplateAction
+  eventSource: D-22429_ENDP
+  eventType: events.HttpRequestEvent
 - notifications:
   - notification: TASK_OVERDUE
     priority: High
