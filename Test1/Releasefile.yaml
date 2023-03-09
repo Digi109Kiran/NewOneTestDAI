@@ -1,8 +1,10 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Mar 09 11:14:21 IST 2023
+# Date created:         Thu Mar 09 11:15:23 IST 2023
 
 ---
 apiVersion: xl-release/v1
 kind: Import
-spec: {}
+spec:
+  imports:
+  - Templates.yaml
