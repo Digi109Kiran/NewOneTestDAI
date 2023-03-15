@@ -1,0 +1,17 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Wed Mar 15 13:12:19 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: Test-1
+spec:
+- name: Test Trigger
+  type: time.Schedule
+  description: Triggers _ Test-1 - Digital.ai Release
+  releaseTitle: T1_R
+  template: T1
+  releaseFolder: ./
+  periodicity: 0 0 * * * *

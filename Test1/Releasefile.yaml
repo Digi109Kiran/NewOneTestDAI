@@ -1,19 +1,13 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Mon Mar 13 17:21:04 IST 2023
+# Date created:         Wed Mar 15 13:12:19 IST 2023
 
 ---
 apiVersion: xl-release/v1
-kind: Templates
-metadata:
-  home: Test-1
+kind: Import
 spec:
-- template: T1
-  scheduledStartDate: 2023-03-09T09:00:00+05:30
-  phases:
-  - phase: P1
-    tasks:
-    - name: T1
-      type: xlrelease.Task
-    color: '#3d6c9e'
-  riskProfile: Default risk profile
+  imports:
+  - Patterns.yaml
+  - Permissions.yaml
+  - Triggers.yaml
+  - Templates.yaml
