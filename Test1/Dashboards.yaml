@@ -1,0 +1,31 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Wed Mar 15 13:29:04 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: Test-1
+spec:
+- name: Test Dashboard
+  type: xlrelease.BlankDashboard
+  description: Test Dashboard
+  owner: admin
+  tiles:
+  - name: Top 10 longest phases
+    type: xlrelease.LongestPhasesTile
+    row: 0
+    col: 0
+  - name: Top 10 longest releases
+    type: xlrelease.LongestReleasesTile
+    row: 0
+    col: 3
+  - name: Top 10 longest tasks
+    type: xlrelease.LongestTasksTile
+    row: 2
+    col: 0
+  - name: Top 10 task assignees
+    type: xlrelease.TopTenTaskAssigneeTile
+    row: 2
+    col: 3
