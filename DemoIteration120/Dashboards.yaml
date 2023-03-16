@@ -1,0 +1,61 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Thu Mar 16 15:51:02 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: Demo Iteration 12
+spec:
+- name: Demo dashboard
+  type: xlrelease.BlankDashboard
+  description: Demo dashboard
+  owner: admin
+  tiles:
+  - name: Active releases by risk
+    type: live.ReleasesByRiskTile
+    row: 0
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases by status
+    type: live.ReleasesByStatusTile
+    row: 0
+    col: 2
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 0
+    col: 4
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ./
+  - name: Top 10 longest phases
+    type: xlrelease.LongestPhasesTile
+    row: 2
+    col: 0
+  - name: Top 10 longest releases
+    type: xlrelease.LongestReleasesTile
+    row: 2
+    col: 3
+  - name: Top 10 longest tasks
+    type: xlrelease.LongestTasksTile
+    row: 4
+    col: 0
+  - name: Top 10 task assignees
+    type: xlrelease.TopTenTaskAssigneeTile
+    row: 4
+    col: 3
