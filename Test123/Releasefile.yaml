@@ -1,0 +1,13 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Fri Mar 17 16:21:53 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Permissions.yaml
+  - Templates.yaml
+  - Patterns.yaml
+  - Dashboards.yaml
