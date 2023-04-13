@@ -1,0 +1,17 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Thu Apr 13 16:35:56 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: S-91883
+spec:
+- name: Trigger_t1
+  type: time.Schedule
+  releaseTitle: Trigger_t1
+  template: Template T1
+  releaseFolder: ./
+  periodicity: 0 0 * * * *
+  enabled: false
