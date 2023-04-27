@@ -8,7 +8,7 @@ kind: Templates
 metadata:
   home: S-90701
 spec:
-- template: Test_Template
+- template: Test_Template (1)
   scheduledStartDate: 2023-04-27T09:00:00+05:30
   phases:
   - phase: Phase One
