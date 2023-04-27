@@ -26,3 +26,21 @@ spec:
     owner: admin
   - stage: Stage 1
     owner: admin
+- pattern: Test_Pattern P2
+  plannedDuration: 1
+  stages:
+    - stage: Stage 0
+      transition:
+        name: New Transition
+        type: delivery.Transition
+        conditions:
+          - type: delivery.ConditionGroup
+            operator: OR
+            conditions:
+              - type: delivery.ConditionGroup
+                operator: AND
+                conditions:
+                  - type: delivery.TimeCondition
+      owner: admin
+    - stage: Stage 1
+      owner: admin
