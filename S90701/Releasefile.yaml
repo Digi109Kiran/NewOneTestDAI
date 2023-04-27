@@ -1,12 +1,13 @@
 # Exported from:        http://LAPTOP-95VG3LUV:5516/
 # Release version:      22.0.0-20211220-123974
-# Date created:         Thu Apr 27 16:13:03 IST 2023
+# Date created:         Thu Apr 27 16:24:51 IST 2023
 
 ---
 apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
+  - Template_Test_Template (2).yaml
   - Template_Test_Template (1).yaml
   - Pattern_Test_Pattern P2.yaml
   - Variables.yaml
