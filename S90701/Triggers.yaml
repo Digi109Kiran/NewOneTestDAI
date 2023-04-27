@@ -1,0 +1,17 @@
+# Exported from:        http://LAPTOP-95VG3LUV:5516/
+# Release version:      22.0.0-20211220-123974
+# Date created:         Thu Apr 27 16:02:08 IST 2023
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  home: S-90701
+spec:
+- name: Test Trigger T1
+  type: time.Schedule
+  releaseTitle: Release R
+  template: Test_Template
+  releaseFolder: ./
+  periodicity: 0 0 * * * *
+  triggerTime: 2023-04-27T16:00:00.273000
