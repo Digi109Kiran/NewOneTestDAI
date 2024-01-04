@@ -39,6 +39,6 @@ spec:
       - Richard Schöner
       - Roland Feichtinger
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_S_97036_T1_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_S_97036_T1_scriptUserPasswor"
   riskProfile: Default risk profile
   defaultTargetFolder: ./
