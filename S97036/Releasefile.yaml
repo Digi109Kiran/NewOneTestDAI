@@ -1,6 +1,6 @@
 # Exported from:        http://DESKTOP-9DGBIAE:5516/
 # Release version:      23.1.0
-# Date created:         Thu Jan 04 19:27:29 IST 2024
+# Date created:         Thu Jan 04 19:29:40 IST 2024
 
 ---
 apiVersion: xl-release/v1
@@ -9,3 +9,4 @@ spec:
   imports:
   - Notifications.yaml
   - Template_S-97036_T1.yaml
+  - Template_T2.yaml
