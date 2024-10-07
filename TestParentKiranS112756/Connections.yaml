@@ -1,0 +1,16 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Mon Oct 07 18:17:03 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Test-Parent-KiranS-112756
+spec:
+- name: JIRA-Folder
+  type: jira.Server
+  url: https://digitalai.atlassian.net/
+  username: xlr-jira-testuser@xebialabs.com
+  apiToken: !value "jira_Server_JIRA_Folder_apiToken"
