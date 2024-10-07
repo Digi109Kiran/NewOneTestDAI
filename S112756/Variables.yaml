@@ -1,0 +1,24 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Mon Oct 07 17:30:56 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-112756
+spec:
+- folderVariables:
+  - type: xlrelease.ReferenceVariable
+    key: folder.test-ref-var-folder
+    value: Configuration/Custom/Configurationa51f5999cd68401589bb5d9dfaca4467
+    referencedType: jenkins.Server
+  - type: xlrelease.ReferenceVariable
+    key: folder.test-jira-ref-var
+    value: Configuration/Custom/Configuration5929976e3f0142769d3340d3ea0c0dab
+    referencedType: jira.Server
+  - type: xlrelease.ReferenceVariable
+    key: folder.jira-miras
+    value: Configuration/Custom/Configuration5929976e3f0142769d3340d3ea0c0dab
+    referencedType: jira.Server
