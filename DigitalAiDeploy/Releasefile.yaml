@@ -1,0 +1,11 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Fri Nov 15 13:33:18 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Notifications.yaml
+  - Workflow_Deploy setup live deployment configuration.yaml
