@@ -1,10 +1,44 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Fri Nov 22 15:23:52 IST 2024
+# Date created:         Fri Nov 22 15:25:48 IST 2024
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  home: D-37260
 spec:
-  imports:
-  - Notifications.yaml
+- directory: nested
+  children:
+  - folderVariables:
+    - type: xlrelease.ReferenceVariable
+      key: folder.jenkins-folder-var
+      value: Configuration/Custom/Configuration048413fdebb947a89adb659323564c85
+      referencedType: jenkins.Server
+  - name: Test-Git-Repo
+    type: git.Repository
+    url: https://github.com/Digi109Kiran/NewOneTestDAI
+    username: Digi109Kiran
+    password: !value "git_Repository_Test_Git_Repo_password"
+  - name: Jenkins-Local-Nested
+    type: jenkins.Server
+    url: http://localhost:8082/
+    username: admin
+    password: !value "jenkins_Server_Jenkins_Local_Nested_password"
+  - template: Test_Template_Nested_T1
+    scheduledStartDate: 2024-11-22T09:00:00+05:30
+    dueDate: 2024-11-22T10:00:00+05:30
+    phases:
+    - phase: New Phase
+      tasks:
+      - name: T1
+        type: jenkins.Build
+        variableMapping:
+          pythonScript.jenkinsServer: "${folder.jenkins-folder-var}"
+    variables:
+    - type: xlrelease.ReferenceVariable
+      key: jenkins-release-var
+      value: Configuration/Custom/Configuration048413fdebb947a89adb659323564c85
+      referencedType: jenkins.Server
+    riskProfile: Default risk profile
+    author: admin
