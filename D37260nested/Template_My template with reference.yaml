@@ -9,8 +9,20 @@ metadata:
   path: /
   home: Samples & Tutorials/Nested
 spec:
-- folderVariables:
+- template: My template with reference
+  scheduledStartDate: 2024-10-08T12:30:00+05:30
+  dueDate: 2024-10-08T13:30:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: New task
+      type: jenkins.Build
+      variableMapping:
+        pythonScript.jenkinsServer: "${folder.reference}"
+  variables:
   - type: xlrelease.ReferenceVariable
-    key: folder.reference
+    key: reference
     value: Configuration/Custom/Configurationa81e23bba0104714b20d1311fcda43c2
     referencedType: jenkins.Server
+  riskProfile: Default risk profile
+  author: admin

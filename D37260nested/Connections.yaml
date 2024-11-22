@@ -1,16 +1,14 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Fri Nov 22 13:34:25 IST 2024
+# Date created:         Fri Nov 22 15:18:54 IST 2024
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
   path: /
-  home: D-37260/nested
+  home: Samples & Tutorials/Nested
 spec:
-- name: Jenkins-Local-Nested
+- name: jenkins nested
   type: jenkins.Server
-  url: http://localhost:8082/
-  username: admin
-  password: !value "jenkins_Server_Jenkins_Local_Nested_password"
+  url: http://test
