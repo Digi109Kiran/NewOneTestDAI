@@ -1,0 +1,23 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Mon Dec 02 12:46:06 IST 2024
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Samples & Tutorials/Nested
+spec:
+- template: Test_Template_T1
+  scheduledStartDate: 2024-11-29T09:00:00+05:30
+  dueDate: 2024-11-29T10:00:00+05:30
+  phases:
+  - phase: New Phase
+  variables:
+  - type: xlrelease.ReferenceVariable
+    key: jenkins-var
+    value: Jenkins_Folder
+    referencedType: jenkins.Server
+  riskProfile: Default risk profile
+  author: admin
