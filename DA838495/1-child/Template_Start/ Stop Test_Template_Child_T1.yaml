@@ -6,10 +6,10 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: D-38495
+  path: 1-child
+  home: D-38495/1-child
 spec:
-- template: Start/Stop EC2 instances or Service
+- template: Start/ Stop Test_Template_Child_T1
   scheduledStartDate: 2025-02-10T09:00:00+05:30
   phases:
   - phase: New Phase
@@ -21,6 +21,6 @@ spec:
       type: xlrelease.Task
       owner: admin
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Start_Stop_EC2_instances_or_Service_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_Start__Stop_Test_Template_Child_T1_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin

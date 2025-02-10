@@ -8,4 +8,4 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
-  - Template_Start/Stop EC2 instances or Service.yaml
+  - Template_Start/ Stop Test_Template_Child_T1.yaml
