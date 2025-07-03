@@ -1,0 +1,20 @@
+# Exported from:        http://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      25.3.0-beta.701
+# Date created:         Thu Jul 03 08:21:20 GMT 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Kiran
+spec:
+- template: Test_Template_T1
+  scheduledStartDate: 2025-07-03T03:30:00Z
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+  riskProfile: Default risk profile
+  author: kiran.sureshraaj@digital.ai

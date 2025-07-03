@@ -1,0 +1,11 @@
+# Exported from:        http://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      25.3.0-beta.701
+# Date created:         Thu Jul 03 08:21:20 GMT 2025
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Notifications.yaml
+  - Template_Test_Template_T1.yaml
