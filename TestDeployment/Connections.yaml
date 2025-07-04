@@ -1,0 +1,31 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Fri Jul 04 16:56:36 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Test-Deployment
+spec:
+- name: Deploy server - Webhook
+  type: events.PostWebhookEndpoint
+  path: test-path
+  authentication:
+    type: events.NoAuthentication
+- name: Deploy server deployments
+  type: test.DeployLiveDeploymentConfig
+  application: Applications/.*
+  environment: Environments/.*
+- name: Deploy server
+  type: test.XLDeployServer
+  url: http://localhost:4516
+  username: admin
+  password: !value "test_XLDeployServer_Deploy_server_password"
+- name: Deploy server - Event source
+  type: test.DeployRemoteStatusWebhookEventSource
+  eventSource: Deploy server - Webhook
+  sourceServer: Deploy server
+  liveDeploymentConfigs:
+  - Deploy server deployments
