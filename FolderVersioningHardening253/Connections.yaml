@@ -1,0 +1,23 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Jul 08 13:36:17 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: Folder_Versioning_Hardening_25.3
+spec:
+- name: Bit-Bucket_Repo
+  type: git.Repository
+  variableMapping:
+    password: "${global.bit-bucket-password}"
+  url: https://bitbucket.org/digi109kiran/test-branches
+  username: digi109kiran
+- name: Git-Lab_Repo
+  type: git.Repository
+  variableMapping:
+    password: "${global.git-lab-password}"
+  url: https://gitlab.com/Digi109Kiran/NewOneTestDAI.git
+  username: Digi109Kiran
