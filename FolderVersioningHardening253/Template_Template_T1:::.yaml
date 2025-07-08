@@ -9,15 +9,12 @@ metadata:
   path: /
   home: Folder_Versioning_Hardening_25.3
 spec:
-- template: Test_Template_T1
+- template: "Template_T1:::"
   scheduledStartDate: 2025-07-08T09:00:00+05:30
-  dueDate: 2025-07-08T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: T1
       type: xlrelease.Task
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Test_Template_T1_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
