@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Tue Jul 08 15:49:59 IST 2025
+# Date created:         Tue Jul 08 15:56:49 IST 2025
 
 ---
 apiVersion: xl-release/v1
@@ -20,6 +20,15 @@ spec:
     password: "${global.git-lab-password}"
   url: https://gitlab.com/Digi109Kiran/NewOneTestDAI.git
   username: Digi109Kiran
+- template: Template_T1:::T@
+  scheduledStartDate: 2025-07-08T09:00:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+  riskProfile: Default risk profile
+  author: admin
 - template: Test_Template_T1
   scheduledStartDate: 2025-07-08T09:00:00+05:30
   dueDate: 2025-07-08T10:00:00+05:30
