@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Mon Jul 21 17:15:30 IST 2025
+# Date created:         Mon Jul 21 17:31:49 IST 2025
 
 ---
 apiVersion: xl-release/v1
@@ -17,7 +17,7 @@ spec:
     - name: New task
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: R1
-      template: S-121811/Test_T1
+      template: Test_Restricted/Test_Template_T1
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_Test_T1_scriptUserPassword"
   riskProfile: Default risk profile
