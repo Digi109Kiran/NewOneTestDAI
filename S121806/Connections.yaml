@@ -1,0 +1,31 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Mon Jul 21 17:12:24 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-121806
+spec:
+- name: NoMainBranch_Repo
+  type: git.Repository
+  url: https://github.com/Digi109Kiran/NoMainBranch
+  username: Digi109Kiran
+  password: !value "git_Repository_NoMainBranch_Repo_password"
+- name: NoMainNoMaster_Repo
+  type: git.Repository
+  url: https://github.com/Digi109Kiran/NoMainNoMaster
+  username: Digi109Kiran
+  password: !value "git_Repository_NoMainNoMaster_Repo_password"
+- name: NoMasterBranch_Repo
+  type: git.Repository
+  url: https://github.com/Digi109Kiran/NoMasterBranch
+  username: Digi109Kiran
+  password: !value "git_Repository_NoMasterBranch_Repo_password"
+- name: Jenkins-Local_Doc
+  type: jenkins.Server
+  url: http://localhost:8082/
+  username: admin
+  password: !value "jenkins_Server_Jenkins_Local_Doc_password"
