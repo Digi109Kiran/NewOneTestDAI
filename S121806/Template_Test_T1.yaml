@@ -9,21 +9,16 @@ metadata:
   path: /
   home: S-121806
 spec:
-- template: Test _Template_T2
-  scheduledStartDate: 2025-07-16T09:00:00+05:30
+- template: Test_T1
+  scheduledStartDate: 2025-07-21T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: T1
-      type: xlrelease.Task
-      owner: admin
-    - name: T2
-      type: xlrelease.Task
-      owner: admin
-    - name: T3
-      type: xlrelease.Task
-      owner: admin
+    - name: New task
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: R1
+      template: S-121811/Test_T1
   scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_Test__Template_T2_scriptUserPassword"
+  scriptUserPassword: !value "xlrelease_Release_Test_T1_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
