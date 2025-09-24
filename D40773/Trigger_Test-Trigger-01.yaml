@@ -1,0 +1,17 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Wed Sep 24 17:34:47 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: D-40773
+spec:
+- name: Test-Trigger-01
+  type: time.Schedule
+  releaseTitle: RAB
+  template: Test_Template_T1
+  releaseFolder: ./
+  periodicity: 0 0 9-17 * * MON-FRI
