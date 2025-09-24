@@ -1,6 +1,6 @@
 # Exported from:        http://release-nightly.devops.dev.digitalai.cloud/
 # Release version:      26.1.0-beta.923
-# Date created:         Wed Sep 24 11:52:26 GMT 2025
+# Date created:         Wed Sep 24 12:49:25 GMT 2025
 
 ---
 apiVersion: xl-release/v1
@@ -9,4 +9,4 @@ spec:
   imports:
   - Notifications.yaml
   - Template_template_t1.yaml
-  - Workflow_workflow_temp.yaml
+  - Trigger_test-trigger.yaml
