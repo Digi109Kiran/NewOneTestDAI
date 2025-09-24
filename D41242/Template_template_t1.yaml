@@ -1,16 +1,17 @@
 # Exported from:        http://release-nightly.devops.dev.digitalai.cloud/
 # Release version:      26.1.0-beta.923
-# Date created:         Wed Sep 24 11:50:52 GMT 2025
+# Date created:         Wed Sep 24 11:51:34 GMT 2025
 
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
   path: /
-  home: D-41242
+  home: D-41242%2F1
 spec:
 - template: Template_T1//
   scheduledStartDate: 2025-09-24T03:30:00Z
+  dueDate: 2025-09-24T04:30:00Z
   phases:
   - phase: New Phase
     tasks:
