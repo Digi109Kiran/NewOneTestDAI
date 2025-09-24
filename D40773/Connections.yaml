@@ -9,9 +9,8 @@ metadata:
   path: /
   home: D-40773
 spec:
-- name: Test-Trigger-01
-  type: time.Schedule
-  releaseTitle: RAB
-  template: Test_Template_T1
-  releaseFolder: ./
-  periodicity: 0 0 9-17 * * MON-FRI
+- name: Jenkins-Folder
+  type: jenkins.Server
+  url: http://localhost:8082/
+  username: admin
+  password: !value "jenkins_Server_Jenkins_Folder_password"
