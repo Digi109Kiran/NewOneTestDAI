@@ -4,13 +4,12 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Templates
+kind: Applications
 metadata:
   path: /
   home: D-40773
 spec:
-- pattern: Test-Pattern
-  stages:
-  - stage: New Stage
-  trackedItems:
-  - trackedItem: Test-Tracked-Item
+- name: Test-App
+  type: xlrelease.Application
+- name: Test-App01
+  type: xlrelease.Application

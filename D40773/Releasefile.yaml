@@ -1,12 +1,14 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Wed Sep 24 17:39:52 IST 2025
+# Date created:         Wed Sep 24 17:40:48 IST 2025
 
 ---
 apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
+  - Applications.yaml
+  - Environments.yaml
   - Notifications.yaml
   - Pattern_Test-Pattern.yaml
   - Template_Test_Template_T1.yaml
