@@ -9,12 +9,9 @@ metadata:
   path: /
   home: Test-Forward-Slash%2F%2F
 spec:
-- template: Test-Template-Slash//
-  scheduledStartDate: 2025-09-25T09:00:00+05:30
-  phases:
-  - phase: New Phase
-    tasks:
-    - name: New task//
-      type: xlrelease.Task
-  riskProfile: Default risk profile
-  author: admin
+- name: Test-Trigger//
+  type: time.Schedule
+  releaseTitle: RAB//
+  template: Test-Template-Slash//
+  releaseFolder: Test-Forward-Slash//
+  periodicity: 0 0 9-17 * * MON-FRI
