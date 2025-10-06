@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Mon Oct 06 16:34:06 IST 2025
+# Date created:         Mon Oct 06 17:08:27 IST 2025
 
 ---
 apiVersion: xl-release/v1
@@ -9,3 +9,7 @@ spec:
   imports:
   - Notifications.yaml
   - Template_test_template_t1.yaml
+  - Template_test_template_t2.yaml
+  - Template_test_template_t3.yaml
+  - Template_test_template_t4.yaml
+  - Template_test_template_t5.yaml

@@ -9,7 +9,7 @@ metadata:
   path: /
   home: S-116492
 spec:
-- template: Test_Template_T1
+- template: Test_Template_T4
   scheduledStartDate: 2025-10-06T09:00:00+05:30
   phases:
   - phase: New Phase
