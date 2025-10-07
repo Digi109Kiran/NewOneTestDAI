@@ -1,0 +1,89 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Oct 07 12:10:20 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: Folder-01
+  home: S-116492-A%2FFolder-01/Folder-01
+spec:
+- directory: "."
+  teams:
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#edit
+    - release#edit_failure_handler
+    - release#reassign_task
+    - release#edit_security
+    - release#reassign_lock_task
+    - release#edit_task_tags
+    - release#edit_task_dates
+    - app_pipelines#view
+    - trigger#view_trigger
+    - release#edit_blackout
+    - workflow#start_execution
+    - release#edit_task_input_output_properties
+    - folder#view
+    - release#edit_task
+    - release#edit_precondition
+    - release#abort
+    - workflow#view_execution
+    - release#edit_task_attachments
+    - release#lock_task
+    - release#start
+    - release#advance_task_transition
+    - release#edit_task_configuration_facet
+    - release#edit_task_script
+    - release#edit_task_flag
+    - workflow#abort_execution
+    - release#restart_phase
+    - release#task_transition
+    - release#edit_task_description
+    - release#view
+    - trigger#edit_trigger
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - folder#view
+    - template#lock_task
+    - app_pipelines#view
+    - template#edit_triggers
+    - template#edit_security
+    - template#create_release
+    - template#edit
+    - template#create_release_other_folder
+    - trigger#view_trigger
+    - template#view
+    - template#edit_precondition
+    - template#edit_failure_handler
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - app_pipelines#view
+    - dashboard#view
+    - folder#view_versions
+    - delivery#edit
+    - group#edit
+    - delivery_pattern#view
+    - folder#edit_variables
+    - folder#edit
+    - dashboard#edit
+    - group#view
+    - delivery_pattern#edit
+    - delivery#edit_tracked_item
+    - folder#view
+    - app_pipelines#edit
+    - folder#view_security
+    - delivery#view
+    - folder#apply_changes
+    - folder#edit_notifications
+    - folder#edit_security
+    - folder#edit_configuration
+    - folder#edit_versions
+    - folder#generate_configuration

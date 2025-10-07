@@ -4,13 +4,10 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Templates
+kind: Applications
 metadata:
   path: Folder-01
   home: S-116492-A%2FFolder-01/Folder-01
 spec:
-- name: Test-Hook-01
-  type: events.PostWebhookEndpoint
-  path: test-hook-01
-  authentication:
-    type: events.NoAuthentication
+- name: Application-01
+  type: xlrelease.Application
