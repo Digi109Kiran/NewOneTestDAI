@@ -1,0 +1,16 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Oct 07 12:09:57 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Folder-01
+  home: S-116492-A%2FFolder-01/Folder-01
+spec:
+- name: Test-Hook-01
+  type: events.PostWebhookEndpoint
+  path: test-hook-01
+  authentication:
+    type: events.NoAuthentication
