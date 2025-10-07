@@ -1,0 +1,23 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Oct 07 15:41:59 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Environments
+metadata:
+  home: Test-App-Env
+spec:
+- name: Test-Env
+  type: xlrelease.Environment
+  stage: Development
+---
+apiVersion: xl-release/v1
+kind: Applications
+metadata:
+  home: Test-App-Env
+spec:
+- name: Test-App
+  type: xlrelease.Application
+  environments:
+  - Test-Env
