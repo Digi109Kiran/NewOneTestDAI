@@ -1,0 +1,22 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Oct 07 11:34:48 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Folder-4
+  home: S-116492%2FFolder-1%2FFolder-2%2FFolder-3%2FFolder-4/Folder-4
+spec:
+- pattern: Test-Pattern-01
+  description: Test-Pattern-01
+  stages:
+  - stage: New Stage
+  - stage: New Stage (1)
+  trackedItems:
+  - trackedItem: Track-01
+  - trackedItem: Track-02
+  - trackedItem: Track-03
+  - trackedItem: Track-04
+  - trackedItem: Track-05

@@ -1,0 +1,45 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Oct 07 11:34:48 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: Folder-4
+  home: S-116492%2FFolder-1%2FFolder-2%2FFolder-3%2FFolder-4/Folder-4
+spec:
+- name: Test-Dashboard
+  type: xlrelease.BlankDashboard
+  owner: admin
+  tiles:
+  - name: Top 10 longest phases
+    type: xlrelease.LongestPhasesTile
+    row: 0
+    col: 0
+  - name: Top 10 longest releases
+    type: xlrelease.LongestReleasesTile
+    row: 0
+    col: 3
+  - name: Top 10 longest tasks
+    type: xlrelease.LongestTasksTile
+    row: 2
+    col: 0
+  - name: Top 10 task assignees
+    type: xlrelease.TopTenTaskAssigneeTile
+    row: 2
+    col: 3
+  - name: Active releases
+    type: live.ReleasesTile
+    row: 4
+    col: 0
+    filters:
+    - type: xlrelease.DateFilter
+    - type: xlrelease.CompositeFilter
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: S-116492/Folder-1/Folder-2/Folder-3/Folder-4
+  - name: Avg. release duration
+    type: xlrelease.AvgReleaseDurationTile
+    row: 4
+    col: 2
