@@ -1,0 +1,27 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+# Date created:         Tue Oct 07 14:58:20 IST 2025
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-116492-B
+spec:
+- name: Test-Trigger
+  type: events.EventBasedTrigger
+  description: Test-Trigger
+  mappedProperties:
+  - type: xlrelease.StringValue
+    targetProperty: releaseTitle
+    value: RAC
+  - type: xlrelease.StringValue
+    targetProperty: template
+    value: Template_T01
+  - type: xlrelease.StringValue
+    targetProperty: releaseFolder
+    value: S-116492-B
+  triggerActionType: xlrelease.CreateReleaseFromTemplateAction
+  eventSource: Test-Get-Hook
+  eventType: events.HttpRequestEvent
