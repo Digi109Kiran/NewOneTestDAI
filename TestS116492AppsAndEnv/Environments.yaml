@@ -4,11 +4,11 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Environments
+metadata:
+  path: /
+  home: Test-S-116492-AppsAndEnv
 spec:
-  imports:
-  - Applications.yaml
-  - Environments.yaml
-  - Notifications.yaml
-  - Template_t1.yaml
-  - Trigger_test-trigger.yaml
+- name: Dev-Env
+  type: xlrelease.Environment
+  stage: Development
