@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Tue Oct 07 14:58:20 IST 2025
+# Date created:         Tue Oct 14 11:44:36 IST 2025
 
 ---
 apiVersion: xl-release/v1
@@ -15,75 +15,75 @@ spec:
     users:
     - admin
     permissions:
-    - template#create_release
-    - app_pipelines#view
-    - template#edit_triggers
-    - template#edit_precondition
-    - trigger#view_trigger
-    - template#view
-    - template#edit
-    - template#create_release_other_folder
     - folder#view
-    - template#edit_security
-    - template#lock_task
+    - template#create_release
+    - template#create_release_other_folder
+    - template#edit
     - template#edit_failure_handler
+    - template#edit_precondition
+    - template#edit_security
+    - template#edit_triggers
+    - template#lock_task
+    - template#view
+    - trigger#view_trigger
+    - app_pipelines#view
   - name: Release Admin
     users:
     - admin
     permissions:
-    - release#edit_blackout
-    - release#view
-    - release#edit_task_description
     - workflow#view_execution
-    - release#edit_task_dates
-    - release#edit_security
-    - release#edit
-    - release#task_transition
-    - workflow#abort_execution
-    - release#edit_task
-    - release#start
-    - release#restart_phase
-    - trigger#view_trigger
     - release#edit_task_tags
-    - release#advance_task_transition
-    - release#edit_task_script
-    - release#edit_precondition
-    - release#abort
-    - release#edit_task_configuration_facet
-    - release#edit_task_input_output_properties
-    - folder#view
-    - trigger#edit_trigger
-    - release#reassign_task
-    - app_pipelines#view
-    - workflow#start_execution
-    - release#edit_failure_handler
-    - release#reassign_lock_task
     - release#lock_task
+    - release#reassign_lock_task
+    - release#reassign_task
+    - release#restart_phase
+    - release#start
+    - release#task_transition
+    - release#view
+    - trigger#edit_trigger
+    - trigger#view_trigger
+    - workflow#abort_execution
+    - workflow#start_execution
+    - app_pipelines#view
+    - folder#view
+    - release#abort
+    - release#advance_task_transition
+    - release#edit
+    - release#edit_blackout
+    - release#edit_failure_handler
+    - release#edit_precondition
+    - release#edit_security
+    - release#edit_task
     - release#edit_task_attachments
+    - release#edit_task_configuration_facet
+    - release#edit_task_dates
+    - release#edit_task_description
     - release#edit_task_flag
+    - release#edit_task_input_output_properties
+    - release#edit_task_script
   - name: Folder Owner
     users:
     - admin
     permissions:
-    - folder#view_security
+    - app_pipelines#edit
+    - app_pipelines#view
+    - dashboard#edit
+    - dashboard#view
+    - delivery#edit
+    - delivery#edit_tracked_item
+    - delivery#view
+    - delivery_pattern#edit
+    - delivery_pattern#view
+    - folder#apply_changes
+    - folder#edit
+    - folder#edit_configuration
+    - folder#edit_notifications
     - folder#edit_security
+    - folder#edit_variables
     - folder#edit_versions
     - folder#generate_configuration
-    - folder#view_versions
-    - folder#edit_notifications
-    - app_pipelines#edit
-    - delivery#edit_tracked_item
-    - delivery#edit
     - folder#view
-    - dashboard#edit
+    - folder#view_security
+    - folder#view_versions
     - group#edit
-    - delivery_pattern#edit
-    - delivery#view
     - group#view
-    - folder#edit_variables
-    - app_pipelines#view
-    - delivery_pattern#view
-    - dashboard#view
-    - folder#apply_changes
-    - folder#edit_configuration
-    - folder#edit
