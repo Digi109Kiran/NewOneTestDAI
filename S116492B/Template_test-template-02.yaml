@@ -9,15 +9,12 @@ metadata:
   path: /
   home: S-116492-B
 spec:
-- template: Test-Template-01
+- template: Test-Template-02
   scheduledStartDate: 2025-10-14T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: New task
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: Test
-      template: ./Test-Template-02
-      folder: ./
+    - name: T1
+      type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin
