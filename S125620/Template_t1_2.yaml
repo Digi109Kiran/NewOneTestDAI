@@ -9,7 +9,7 @@ metadata:
   path: /
   home: S-125620
 spec:
-- template: T1
+- template: T1.2
   scheduledStartDate: 2025-10-22T05:30:00+02:00
   phases:
   - phase: New Phase
