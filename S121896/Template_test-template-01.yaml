@@ -7,7 +7,7 @@ apiVersion: xl-release/v1
 kind: Templates
 metadata:
   path: /
-  home: S-116492-B
+  home: S-121896
 spec:
   - template: T1
     scheduledStartDate: 2025-11-06T04:30:00+01:00
