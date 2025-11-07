@@ -6,8 +6,8 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: Child-A
-  home: D-41252/Child-A
+  path: Child-A/Child-B/Child-C
+  home: D-41252/Child-A/Child-B/Child-C
 spec:
 - notifications:
   - notification: TASK_OVERDUE

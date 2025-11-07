@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      24.1.0
-# Date created:         Fri Nov 07 11:45:32 CET 2025
+# Date created:         Fri Nov 07 12:14:15 CET 2025
 
 ---
 apiVersion: xl-release/v1
@@ -19,8 +19,8 @@ spec:
       type: xlrelease.CreateReleaseTask
       owner: admin
       newReleaseTitle: RAC
-      template: ./Child-A/Template_T1
-      folder: ./Child-A
+      template: ./Child-A/Child-B/Child-C/T1
+      folder: ./Child-A/Child-B
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_CRT_Template_scriptUserPassword"
   riskProfile: Default risk profile
