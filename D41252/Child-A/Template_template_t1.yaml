@@ -6,22 +6,16 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
-  home: D-41252
+  path: Child-A
+  home: D-41252/Child-A
 spec:
-- template: CRT_Template
+- template: Template_T1
   scheduledStartDate: 2025-11-07T04:30:00+01:00
-  dueDate: 2025-11-07T05:30:00+01:00
   phases:
   - phase: New Phase
     tasks:
-    - name: CRT1
-      type: xlrelease.CreateReleaseTask
+    - name: T1
+      type: xlrelease.Task
       owner: admin
-      newReleaseTitle: RAC
-      template: ./Child-A/Template_T1
-      folder: ./Child-A
-  scriptUsername: admin
-  scriptUserPassword: !value "xlrelease_Release_CRT_Template_scriptUserPassword"
   riskProfile: Default risk profile
   author: admin
