@@ -4,12 +4,10 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Applications
+metadata:
+  path: /
+  home: S-125620
 spec:
-  imports:
-  - Applications.yaml
-  - Environments.yaml
-  - Notifications.yaml
-  - Template_t1.yaml
-  - Template_t1_2.yaml
-  - Template_t2.yaml
+- name: T1
+  type: xlrelease.Application
