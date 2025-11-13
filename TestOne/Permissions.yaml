@@ -1,0 +1,89 @@
+# Exported from:        http://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      26.1.0-beta.1113
+# Date created:         Thu Nov 13 09:03:59 GMT 2025
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: /
+  home: Test-One
+spec:
+- directory: "."
+  teams:
+  - name: Template Owner
+    users:
+    - kiran.sureshraaj@digital.ai
+    permissions:
+    - template#edit_triggers
+    - template#lock_task
+    - app_pipelines#view
+    - folder#view
+    - template#create_release_other_folder
+    - trigger#view_trigger
+    - template#edit_security
+    - template#edit_precondition
+    - template#edit
+    - template#create_release
+    - template#edit_failure_handler
+    - template#view
+  - name: Folder Owner
+    users:
+    - kiran.sureshraaj@digital.ai
+    permissions:
+    - delivery#edit_tracked_item
+    - folder#generate_configuration
+    - folder#view_security
+    - delivery_pattern#view
+    - app_pipelines#edit
+    - delivery#view
+    - app_pipelines#view
+    - dashboard#view
+    - group#view
+    - delivery_pattern#edit
+    - folder#view
+    - folder#view_versions
+    - folder#apply_changes
+    - folder#edit_notifications
+    - folder#edit_configuration
+    - group#edit
+    - folder#edit_versions
+    - dashboard#edit
+    - folder#edit
+    - folder#edit_variables
+    - delivery#edit
+    - folder#edit_security
+  - name: Release Admin
+    users:
+    - kiran.sureshraaj@digital.ai
+    permissions:
+    - release#edit_task_flag
+    - release#edit_task_attachments
+    - release#edit_task_script
+    - folder#view
+    - release#restart_phase
+    - release#edit_task_description
+    - release#edit_failure_handler
+    - release#start
+    - workflow#view_execution
+    - release#edit_task_tags
+    - release#edit_task_input_output_properties
+    - release#edit
+    - release#edit_blackout
+    - workflow#abort_execution
+    - app_pipelines#view
+    - release#lock_task
+    - workflow#start_execution
+    - release#reassign_task
+    - trigger#edit_trigger
+    - release#abort
+    - release#edit_task_configuration_facet
+    - trigger#view_trigger
+    - release#edit_task_dates
+    - release#edit_precondition
+    - release#edit_security
+    - release#reassign_lock_task
+    - release#task_transition
+    - release#edit_task
+    - release#view
+    - release#advance_task_transition
