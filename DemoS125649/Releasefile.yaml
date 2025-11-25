@@ -3,9 +3,402 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  home: Demo-S-125649
 spec:
-  imports:
-  - Notifications.yaml
-  - Permissions.yaml
-  - Templates.yaml
+- template: Template_T1
+  scheduledStartDate: 2025-11-25T04:30:00+01:00
+  dueDate: 2025-11-25T05:30:00+01:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+    - name: T2
+      type: xlrelease.Task
+    - name: T3
+      type: xlrelease.ScriptTask
+      script: |-
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+  - phase: New Phase 01
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+    - name: T2
+      type: xlrelease.Task
+    - name: T3
+      type: xlrelease.ScriptTask
+      script: |-
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+    color: "#3d6c9e"
+  - phase: New Phase 02
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+    - name: T2
+      type: xlrelease.Task
+    - name: T3
+      type: xlrelease.ScriptTask
+      script: |-
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+    color: "#3d6c9e"
+  riskProfile: Default risk profile
+  author: admin
+- notifications:
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is overdue.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_ABORTED
+    priority: Normal
+    subject: "[Release] Audit report was aborted"
+    body: |-
+      **Your audit report was aborted!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: TASK_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The status of the **${task.title}** task in the **${release.title}** release was changed to **${task.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Team
+  - notification: MANUAL_TASK_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started and is assigned to you or your team.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Task Owner
+  - notification: TASK_FAILED
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has failed.
+
+      Other tasks could still be in progress, but the release will stop after they complete.
+
+      You can retry the task, reassign it to somebody else or abort the release.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: USER_MENTIONED
+    priority: Normal
+    subject: "[Release] ${mentionedByFullName} mentioned you on ${release.title}:\
+      \ ${task.title}"
+    body: "**${mentionedByFullName}** mentioned you on the **${task.title}** task\
+      \ in the **${release.title}** release:"
+  - notification: COMMENT_ADDED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      **${comment.authorFullName}** commented on the **${task.title}** task in the **${release.title}** release:
+
+      ${comment.text}
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_FAILED
+    priority: Normal
+    subject: "[Release] Audit report has failed"
+    body: |-
+      **Your audit report has failed!**
+
+       Please try to generate it again or contact your Release administrator for assistance.
+  - notification: RELEASE_FAILED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release has failed due to a task failure.
+
+      The release is now stopped.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: TASK_DUE_SOON
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is due in **${task.dueInHours}** hours and **${task.dueInMinutes}** minutes.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
+  - notification: ACTIVE_TASK_UNASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is active but not assigned to anyone anymore.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: RELEASE_FAILING
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The **${release.title}** release is failing due to a task failure.
+
+      Other tasks may still be in progress, but the release will stop after they complete.
+
+      You can retry the failed task, reassign it to somebody else or abort the release.
+    roles:
+    - Release Admin
+  - notification: USER_TOKEN_ABOUT_TO_EXPIRE
+    priority: Normal
+    subject: "[Release] Your personal access token is about to expire"
+    body: |-
+      Your personal access token "'${token.tokenNote}'" will expire in about ${token.expirationDurationInHours} hours.
+
+       If this token is still needed, visit [Access tokens](${url}#/personal-access-token) to generate an equivalent.
+  - notification: RELEASE_FLAGGED
+    priority: High
+    subject: "[Release] ${release.title}"
+    body: |-
+      The status of the **${release.title}** release was changed to **${release.flagStatus}** with the following comment:
+
+      **${release.flagComment}**
+    roles:
+    - Release Admin
+  - notification: MANUAL_TASK_STARTED_WITHOUT_OWNER
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release has started, but it is not assigned.
+
+      Please assign the task to a user or a team.
+    roles:
+    - Watcher
+    - Release Admin
+  - notification: RELEASE_COMPLETED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been completed."
+    roles:
+    - Release Admin
+  - notification: TASK_WAITING_FOR_INPUT
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release needs your input.
+
+      Please enter the required information so the release can continue.
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+  - notification: AUDIT_REPORT_JOB_COMPLETED
+    priority: Normal
+    subject: "[Release] Report '${report.reportName}' is ready"
+    body: |-
+      **Your audit report is complete!**
+
+       '${report.reportName}' is ready for download.
+  - notification: GENERIC_SYSTEM_NOTIFICATION
+    priority: Normal
+    subject: "${notification.subject}"
+    body: "${notification.body}"
+  - notification: RELEASE_ABORTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been aborted."
+    bulkSubject: "[Release] Multiple releases aborted"
+    bulkBody: |-
+      The following releases have been aborted:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: RELEASE_STARTED
+    priority: Normal
+    subject: "[Release] ${release.title}"
+    body: "The **${release.title}** release has been started."
+    bulkSubject: "[Release] Multiple releases started"
+    bulkBody: |-
+      The following releases have been started:
+
+      ${#releases}
+      * [${title}](${url})
+      ${/releases}
+    roles:
+    - Release Admin
+  - notification: ACTIVE_TASK_ASSIGNED
+    priority: Normal
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: "The active task **${task.title}** in the **${release.title}** release is\
+      \ now assigned to ${task.ownerFullName}."
+    roles:
+    - Watcher
+    - Task Team
+    - Task Owner
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  home: Demo-S-125649
+spec:
+- directory: "."
+  teams:
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#abort
+    - release#edit_task_configuration_facet
+    - release#advance_task_transition
+    - workflow#start_execution
+    - app_pipelines#view
+    - release#start
+    - release#edit_precondition
+    - release#edit_task_attachments
+    - release#reassign_task
+    - workflow#view_execution
+    - release#task_transition
+    - release#restart_phase
+    - release#reassign_lock_task
+    - release#edit_task_flag
+    - trigger#edit_trigger
+    - release#edit_task_input_output_properties
+    - release#edit_task_tags
+    - folder#view
+    - release#edit_task_dates
+    - trigger#view_trigger
+    - release#lock_task
+    - workflow#abort_execution
+    - release#edit_security
+    - release#edit_task_description
+    - release#edit_failure_handler
+    - release#edit
+    - release#edit_task
+    - release#view
+    - release#edit_task_script
+    - release#edit_blackout
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - delivery_pattern#edit
+    - folder#edit_notifications
+    - folder#apply_changes
+    - delivery#view
+    - dashboard#edit
+    - folder#edit_configuration
+    - folder#view
+    - app_pipelines#edit
+    - group#view
+    - folder#edit_variables
+    - group#edit
+    - folder#view_versions
+    - folder#edit
+    - delivery_pattern#view
+    - delivery#edit
+    - delivery#edit_tracked_item
+    - folder#view_security
+    - folder#edit_security
+    - folder#edit_versions
+    - app_pipelines#view
+    - folder#generate_configuration
+    - dashboard#view
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#view
+    - template#edit_security
+    - template#edit_failure_handler
+    - template#edit
+    - trigger#view_trigger
+    - template#create_release_other_folder
+    - template#lock_task
+    - app_pipelines#view
+    - template#edit_triggers
+    - folder#view
+    - template#edit_precondition
+    - template#create_release
