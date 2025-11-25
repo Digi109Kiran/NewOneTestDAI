@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: Template_T1
   scheduledStartDate: 2025-11-25T04:30:00+01:00
+  dueDate: 2025-11-25T05:30:00+01:00
   phases:
   - phase: New Phase
     tasks:
@@ -22,6 +23,18 @@ spec:
       script: |-
         print 'Hello Line 123'
         print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
         print 'Hello Line 123'
         print 'Hello Line 123'
         print 'Hello Line 123'
