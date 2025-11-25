@@ -30,17 +30,5 @@ spec:
         print 'Hello Line 123'
         print 'Hello Line 123'
         print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
-        print 'Hello Line 123'
   riskProfile: Default risk profile
   author: admin
