@@ -8,4 +8,4 @@ spec:
   imports:
   - Notifications.yaml
   - Permissions.yaml
-  - Template_template_t1.yaml
+  - Templates.yaml
