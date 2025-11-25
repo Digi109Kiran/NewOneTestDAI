@@ -43,5 +43,69 @@ spec:
         print 'Hello Line 123'
         print 'Hello Line 123'
         print 'Hello Line 123'
+  - phase: New Phase 01
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+    - name: T2
+      type: xlrelease.Task
+    - name: T3
+      type: xlrelease.ScriptTask
+      script: |-
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+    color: "#3d6c9e"
+  - phase: New Phase 02
+    tasks:
+    - name: T1
+      type: xlrelease.Task
+    - name: T2
+      type: xlrelease.Task
+    - name: T3
+      type: xlrelease.ScriptTask
+      script: |-
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 456'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+        print 'Hello Line 123'
+    color: "#3d6c9e"
   riskProfile: Default risk profile
   author: admin
