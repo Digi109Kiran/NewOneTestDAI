@@ -1,0 +1,72 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      26.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: D-41842
+spec:
+- template: T1
+  scheduledStartDate: 2025-11-28T04:30:00+01:00
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: T1
+      type: xlrelease.ScriptTask
+      script: |-
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+        print 'Hello 123'
+  riskProfile: Default risk profile
+  author: admin
