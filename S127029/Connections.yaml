@@ -1,0 +1,15 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-127029
+spec:
+- name: Test-Jenkins
+  type: jenkins.Server
+  url: http://localhost:8082/
+  username: admin
+  password: !value "jenkins_Server_Test_Jenkins_password"
