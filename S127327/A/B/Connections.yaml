@@ -1,0 +1,15 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: A/B
+  home: S-127327/A/B
+spec:
+- name: Folder_Git
+  type: git.Repository
+  url: https://github.com/Digi109Kiran/NewOneTestDAI
+  username: Digi109Kiran
+  password: !value "git_Repository_Folder_Git_password"
