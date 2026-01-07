@@ -1,0 +1,94 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Permissions
+metadata:
+  path: B
+  home: S-127327%2FA%2FB/B
+spec:
+- directory: "."
+  teams:
+  - name: Template Owner
+    users:
+    - admin
+    permissions:
+    - template#view
+    - template#edit
+    - template#lock_task
+    - folder#view
+    - template#create_release
+    - template#edit_precondition
+    - template#create_release_other_folder
+    - template#edit_triggers
+    - trigger#view_trigger
+    - template#edit_failure_handler
+    - app_pipelines#view
+    - template#edit_security
+  - name: Viewer
+    roles:
+    - Authenticated Users
+    permissions:
+    - folder#view
+    - template#view
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - delivery_pattern#edit
+    - folder#edit
+    - group#edit
+    - dashboard#edit
+    - folder#edit_notifications
+    - group#view
+    - folder#edit_variables
+    - folder#edit_configuration
+    - folder#edit_versions
+    - folder#generate_configuration
+    - dashboard#view
+    - delivery_pattern#view
+    - delivery#view
+    - folder#view
+    - folder#view_versions
+    - folder#view_security
+    - delivery#edit_tracked_item
+    - folder#edit_security
+    - folder#apply_changes
+    - app_pipelines#view
+    - app_pipelines#edit
+    - delivery#edit
+  - name: Release Admin
+    users:
+    - admin
+    permissions:
+    - release#advance_task_transition
+    - release#reassign_task
+    - release#start
+    - release#task_transition
+    - release#edit_blackout
+    - release#lock_task
+    - release#edit_task_description
+    - folder#view
+    - trigger#view_trigger
+    - release#edit_task_flag
+    - release#edit_task_dates
+    - release#edit_task
+    - release#edit
+    - release#edit_task_tags
+    - release#edit_task_attachments
+    - workflow#abort_execution
+    - release#edit_task_script
+    - release#view
+    - release#reassign_lock_task
+    - release#edit_failure_handler
+    - release#edit_task_input_output_properties
+    - release#restart_phase
+    - app_pipelines#view
+    - workflow#start_execution
+    - release#abort
+    - release#edit_precondition
+    - workflow#view_execution
+    - release#edit_task_configuration_facet
+    - trigger#edit_trigger
+    - release#edit_security
