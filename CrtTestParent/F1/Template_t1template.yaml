@@ -10,13 +10,14 @@ metadata:
 spec:
 - template: T1Template
   scheduledStartDate: 2026-01-09T04:30:00+01:00
+  dueDate: 2026-01-09T05:30:00+01:00
   phases:
   - phase: New Phase
     tasks:
     - name: CRT1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: CRTTest-Parent/ParentTemplate
+      template: ../ParentTemplate
       folder: CRTTest-Parent
     - name: CRT2
       type: xlrelease.CreateReleaseTask
@@ -31,7 +32,7 @@ spec:
     - name: CRT4
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: CRTTest-Parent/F2/T2-Template
+      template: ../F2/T2-Template
       folder: CRTTest-Parent/F2
   riskProfile: Default risk profile
   author: admin
