@@ -18,7 +18,7 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
       template: ../ParentTemplate
-      folder: CRTTest-Parent
+      folder: ../
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
@@ -33,6 +33,6 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
       template: ../F2/T2-Template
-      folder: CRTTest-Parent/F2
+      folder: ../F2
   riskProfile: Default risk profile
   author: admin
