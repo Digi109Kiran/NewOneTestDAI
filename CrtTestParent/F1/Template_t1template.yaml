@@ -18,21 +18,21 @@ spec:
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
       template: ../ParentTemplate
-      folder: ../
+      folder: CRTTest-Parent
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
       template: ./F1Nested/T1Nested
-      folder: ./F1Nested
+      folder: CRTTest-Parent/F1/F1Nested
     - name: CRT3
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
       template: ./F1Nested/F2Nested/T2Nested
-      folder: ./F1Nested/F2Nested
+      folder: CRTTest-Parent/F1/F1Nested/F2Nested
     - name: CRT4
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
       template: ../F2/T2-Template
-      folder: ../F2
+      folder: CRTTest-Parent/F2
   riskProfile: Default risk profile
   author: admin
