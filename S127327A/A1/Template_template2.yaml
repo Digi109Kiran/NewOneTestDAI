@@ -17,12 +17,12 @@ spec:
     - name: crt1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: CRT1
-      template: A/A2/Template3
-      folder: A/A2
+      template: ../A2/Template3
+      folder: ./
     - name: crt2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: crt2
-      template: A/A2/A3/A4/A5/Template4
-      folder: A/A2/A3/A4/A5
+      template: ../A2/A3/A4/A5/Template4
+      folder: ./
   riskProfile: Default risk profile
   author: admin
