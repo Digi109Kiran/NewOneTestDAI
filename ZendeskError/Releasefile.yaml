@@ -1967,3 +1967,26 @@ spec:
               phaseApi.updatePhase(phase)
               
               releaseVariables['index'] = releaseVariables['index'] + 1
+          - name: 🛒 GET AAP RESOURCES IDs
+            type: xlrelease.SequentialGroup
+            tasks:
+              - name: 🏭 Get AAP Resources Ids task generator
+                type: xlrelease.ScriptTask
+                script: |-
+                  from com.xebialabs.xlrelease.domain.recover import TaskRecoverOp
+                  
+                  
+                  ## get id of sequential group to insert tasks into
+                  sequentialGroupId = None
+                  parenttask = getCurrentTask().container
+                  for child in parenttask.getChildren():
+                      if str(child.type).lower() == "xlrelease.SequentialGroup".lower():
+                          sequentialGroupId = child.id
+                      if str(child.type).lower() == "webhook.JsonWebhook".lower():
+                          taskApi.delete(child.id)
+                  
+                  
+                  ## get all release variables into list
+                  varList = releaseApi.getVariables(release.id)
+                  
+                  ##get variabble couloir to insert into user input task
