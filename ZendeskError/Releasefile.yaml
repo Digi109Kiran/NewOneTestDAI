@@ -16484,6 +16484,24 @@ spec:
                       releaseVariables['isRelease'] = "false"
                   else:
                       releaseVariables['isRelease'] = "true"
+                  
+                  # abort if snapshot in production environment
+                  
+                  #if (releaseVariables['env'] == "PROD" and releaseVariables['isRelease'] == "false"):
+                  #   #comment = "Attention: You are deploying a SNAPSHOT in a PRODUCTION environment, Aborting phase..."
+                  #   #task.getRelease().addComment(comment)
+                  
+                  #  # abort phase
+                  #   current_phase = phaseApi.getPhase(phase.id)
+                  #   releaseAp.abortCurrentPhase(current_phase, "Attention: You are deploying a SNAPSHOT in a PRODUCTION environment, Aborting phase..."
+                  
+                  ####Set envc /envd variables
+                  #envc = phase_name[0].lower()
+                  #releaseVariables['ext_envc'] = envc
+                  #
+                  #envd = phase_name[0].capitalize()
+                  #releaseVariables['ext_envd'] = envd
+                  #
                   ######>>>>>>
           - name: Deploy Infolivre
             type: ansibletower.launchAndWait
@@ -16693,15 +16711,6 @@ spec:
     type: gitlab.TagTrigger
     enabled: false
     releaseTitle: "Deploy Draft Control-M ${tagName}"
-    variables:
-      - type: xlrelease.StringVariable
-        key: user
-        label: UID
-      - type: xlrelease.PasswordStringVariable
-        key: password
-        label: Password
-      - type: xlrelease.StringVariable
-        key: version
     template: Control-M-AP23882-CARAT-DEPLOY EBX V6
     releaseFolder: ./
     gitlab_server: devopstc-gitlab
