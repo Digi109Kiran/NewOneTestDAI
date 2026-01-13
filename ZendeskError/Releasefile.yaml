@@ -16711,7 +16711,12 @@ spec:
     type: gitlab.TagTrigger
     enabled: false
     releaseTitle: "Deploy Draft Control-M ${tagName}"
-    template: Control-M-AP23882-CARAT-DEPLOY EBX V6
-    releaseFolder: ./
-    gitlab_server: devopstc-gitlab
-    project_id: 62849
+    variables:
+      - type: xlrelease.StringVariable
+        key: user
+        label: UID
+      - type: xlrelease.PasswordStringVariable
+        key: password
+        label: Password
+      - type: xlrelease.StringVariable
+        key: version
