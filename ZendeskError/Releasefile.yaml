@@ -2064,23 +2064,3 @@ spec:
                   phase = getCurrentPhase()
                   current_phase = phaseApi.getPhase(phase.id)
                   phase_name = current_phase.title
-                  
-                  
-                  ## get id of sequential group to insert tasks into
-                  sequentialGroupId = None
-                  parenttask = getCurrentTask().container
-                  for child in parenttask.getChildren():
-                      if str(child.type).lower() == "xlrelease.SequentialGroup".lower():
-                          sequentialGroupId = child.id
-                      if str(child.type).lower() == "webhook.JsonWebhook".lower():
-                          taskApi.delete(child.id)
-                  
-                  
-                  ## get id of sequential group to insert tasks into
-                  sequentialGroupId = None
-                  parenttask = getCurrentTask().container
-                  sequentialGroupId = parenttask.getChildren()[1].id
-                  
-                  ## Set variables for project update
-                  scm_url = 'https://gitlab-dogen.group.echonet/gf/itg_itgp/dass/toolchain_cardif_xlr/draft_control-m.git'
-                  scm_branch = '${scm_branch}'
