@@ -1990,3 +1990,22 @@ spec:
                   varList = releaseApi.getVariables(release.id)
                   
                   ##get variabble couloir to insert into user input task
+                  for obj in varList:
+                      if "AAP-name" in obj.key:
+                         resource = obj.value
+                         var_name = obj.key
+                         type = var_name.split('-')[-1]
+                         var_resourceId = var_name.replace("name", "id")
+                         if releaseVariables[var_resourceId] == "":
+                          api_check_url = "https://ansible-devops.group.echonet/api/v2/" + str(type) + "/?search=" + str(resource)
+                          taskCheckResource = taskApi.newTask("webhook.JsonWebhook")
+                          taskCheckResource.pythonScript.setProperty("URL", api_check_url)
+                          taskCheckResource.pythonScript.setProperty("method", 'GET')
+                          taskCheckResource.pythonScript.setProperty("jsonPathExpression", "$" + ".results[0].id")
+                          taskCheckResource.variableMapping = {"pythonScript.result" : "$" + "{" + str(var_resourceId) + "}"}
+                          taskCheckResource.pythonScript.setProperty("username", "$" + "{" + "user" + "}")
+                          taskCheckResource.pythonScript.setProperty("password", "$" + "{" + "password" + "}")
+                          taskCheckResource.setTaskFailureHandlerEnabled(True)
+                          taskCheckResource.setTaskRecoverOp(TaskRecoverOp.SKIP_TASK)
+                          taskCheckResource.title = "get " + str(type) + " " + str(resource)
+                          taskApi.addTask(sequentialGroupId, taskCheckResource)
