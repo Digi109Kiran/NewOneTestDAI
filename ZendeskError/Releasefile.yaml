@@ -2009,3 +2009,78 @@ spec:
                           taskCheckResource.setTaskRecoverOp(TaskRecoverOp.SKIP_TASK)
                           taskCheckResource.title = "get " + str(type) + " " + str(resource)
                           taskApi.addTask(sequentialGroupId, taskCheckResource)
+              - name: 🚀 GET AAP RESOURCES GROUP
+                type: xlrelease.SequentialGroup
+          - name: 🔐 SET AAP ARTIFACTORY CREDENTIAL
+            type: xlrelease.SequentialGroup
+            tasks:
+              - name: 🏭 Set Credential task generator
+                type: xlrelease.ScriptTask
+                script: |-
+                  ## get id of sequential group to insert tasks into
+                  sequentialGroupId = None
+                  parenttask = getCurrentTask().container
+                  for child in parenttask.getChildren():
+                      if str(child.type).lower() == "xlrelease.SequentialGroup".lower():
+                          sequentialGroupId = child.id
+                      if str(child.type).lower() == "webhook.JsonWebhook".lower():
+                          taskApi.delete(child.id)
+                  
+                  ## get all release variables into list
+                  varList = releaseApi.getVariables(release.id)
+                  
+                  
+                  for obj in varList:
+                      if obj.key == "AAP-id-" + "organizations":
+                          organization_id = obj.value
+                      if obj.key == "AAP-id-" + '${AAP-name-organizations}' + "-artifactory-credentials":
+                          resource_id = obj.value
+                          var_name = obj.key
+                          resource_type = var_name.split('-')[-1]
+                      if obj.key == "AAP-name-" + '${AAP-name-organizations}' + "-artifactory-credentials":
+                          resource_name = obj.value
+                          credential_type = '24'
+                  body = "\"" + "name" + "\"" + ": " + "\"" + str(resource_name) + "\"" + ", " + "\"" + "organization" + "\"" + ": " + str(organization_id) + ", " + "\"" + "credential_type" + "\"" + ": " + str(credential_type) + ", " + "\"" + "inputs" + "\"" + ": { " + "\"" + "artifact_user" + "\"" + ": " + "\"" + "$" + "{" + "user" + "}" + "\"" + ", " + "\"" + "artifact_password" + "\"" + ": " + "\"" + "$" + "{" + "password" + "}" + "\"" + "}"
+                  
+                  
+                  api_put_url = "https://ansible-devops.group.echonet/api/v2/" + str(resource_type) + "/" + str(resource_id) + "/"
+                  taskUpdateResource = taskApi.newTask("webhook.JsonWebhook")
+                  taskUpdateResource.pythonScript.setProperty("URL", api_put_url)
+                  taskUpdateResource.pythonScript.setProperty("method", 'PUT')
+                  taskUpdateResource.pythonScript.setProperty("body", "{" + str(body) + "}")
+                  taskUpdateResource.pythonScript.setProperty("username", "$" + "{" + "user" + "}")
+                  taskUpdateResource.pythonScript.setProperty("password", "$" + "{" + "password" + "}")
+                  taskUpdateResource.title = "Set credential " + " " + str(resource_name)
+                  taskApi.addTask(sequentialGroupId, taskUpdateResource)
+              - name: 🚀 SET CREDENTIAL GROUP
+                type: xlrelease.SequentialGroup
+          - name: ✍ UPDATE AAP RESOURCES
+            type: xlrelease.SequentialGroup
+            tasks:
+              - name: 🏭 Update AAP Resources task generator
+                type: xlrelease.ScriptTask
+                script: |-
+                  ####get phase name ###
+                  phase = getCurrentPhase()
+                  current_phase = phaseApi.getPhase(phase.id)
+                  phase_name = current_phase.title
+                  
+                  
+                  ## get id of sequential group to insert tasks into
+                  sequentialGroupId = None
+                  parenttask = getCurrentTask().container
+                  for child in parenttask.getChildren():
+                      if str(child.type).lower() == "xlrelease.SequentialGroup".lower():
+                          sequentialGroupId = child.id
+                      if str(child.type).lower() == "webhook.JsonWebhook".lower():
+                          taskApi.delete(child.id)
+                  
+                  
+                  ## get id of sequential group to insert tasks into
+                  sequentialGroupId = None
+                  parenttask = getCurrentTask().container
+                  sequentialGroupId = parenttask.getChildren()[1].id
+                  
+                  ## Set variables for project update
+                  scm_url = 'https://gitlab-dogen.group.echonet/gf/itg_itgp/dass/toolchain_cardif_xlr/draft_control-m.git'
+                  scm_branch = '${scm_branch}'
