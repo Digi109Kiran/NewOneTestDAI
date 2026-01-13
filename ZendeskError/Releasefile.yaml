@@ -3375,3 +3375,5 @@ spec:
                 description: Please enter the required information below.
                 variables:
                   - rollback
+              - name: Rollback
+                type: ansibletower.launchAndWait
