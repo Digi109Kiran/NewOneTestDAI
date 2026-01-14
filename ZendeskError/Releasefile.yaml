@@ -2900,7 +2900,6 @@ spec:
                 locked: true
           - name: RUN PLAYBOOK ANSIBLE
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             job_template_id: j-AP06531-deploy_aple_control-mdev-2559-CARDIF_DDH-DEV
             extra_vars:
               base_url: "${base_url}"
@@ -2929,7 +2928,6 @@ spec:
                   - rollback
               - name: RUN Rollback ANSIBLE
                 type: ansibletower.launchAndWait
-                ansibletower: devopstc-ansibleAutomation-HORSPROD
                 job_template_id: j-AP06531-deploy_aple_control-mdev-2559-CARDIF_DDH-DEVRollBack
                 extra_vars:
                   base_url: "${base_url}"
@@ -3121,7 +3119,6 @@ spec:
             locked: true
           - name: RUN PLAYBOOK CREATE COULOIR
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             job_template_id: j-AP06578-create_couloir-ansiblev2-3440-CARDIF-DEV
             extra_vars:
               ext_repo_user: "${artifactory_user}"
@@ -3144,7 +3141,6 @@ spec:
               ext_repo_passwd: ""
           - name: RUN PLAYBOOK INFOLIVRE
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             job_template_id: j-AP06578-infolivre-ansiblev2-3440-CARDIF-DEV
             extra_vars:
               repo_pwd: "${artifactory_pwd}"
@@ -3600,7 +3596,6 @@ spec:
                   ######>>>>>>
           - name: Deploy Infolivre
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             job_template_id: j-AP06578-infolivre-HORSPROD
             extra_vars:
               isRelease: "${isRelease}"
@@ -3633,7 +3628,6 @@ spec:
                   - rollback
               - name: Rollback
                 type: ansibletower.launchAndWait
-                ansibletower: devopstc-ansibleAutomation-HORSPROD
                 job_template_id: j-AP06578-infolivre-rollback-HORSPROD
                 extra_vars:
                   isRelease: "${isRelease}"
@@ -3866,7 +3860,6 @@ spec:
                   #releaseVariables['ap_code'] = "AP" + releaseVariables['codeAP']######>>>>>>
           - name: Deploy Infolivre
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             job_template_id: j-AP06578-infolivre-HORSPROD
             extra_vars:
               isRelease: "${isRelease}"
@@ -3897,7 +3890,6 @@ spec:
                   - rollback
               - name: Rollback
                 type: ansibletower.launchAndWait
-                ansibletower: devopstc-ansibleAutomation-HORSPROD
                 job_template_id: j-AP06578-infolivre-rollback-HORSPROD
                 extra_vars:
                   isRelease: "${isRelease}"
@@ -5380,7 +5372,6 @@ spec:
             type: jenkins.Build
           - name: test condition
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             precondition: "releaseVariables['jobstatus'] == 'Success'"
             variableMapping:
               pythonScript.status: "${jobstatus}"
@@ -16505,7 +16496,6 @@ spec:
                   ######>>>>>>
           - name: Deploy Infolivre
             type: ansibletower.launchAndWait
-            ansibletower: devopstc-ansibleAutomation-HORSPROD
             job_template_id: j-AP06578-infolivre-HORSPROD
             extra_vars:
               isRelease: "${isRelease}"
@@ -16538,7 +16528,6 @@ spec:
                   - rollback
               - name: Rollback
                 type: ansibletower.launchAndWait
-                ansibletower: devopstc-ansibleAutomation-HORSPROD
                 job_template_id: j-AP06578-infolivre-rollback-HORSPROD
                 extra_vars:
                   isRelease: "${isRelease}"
