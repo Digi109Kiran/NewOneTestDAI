@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
-# Release version:      23.1.1
-# Date created:         Fri Feb 27 14:37:58 IST 2026
+# Release version:      25.3.5-222.1600
+# Date created:         Fri Feb 27 15:07:48 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -20,18 +20,20 @@ spec:
   password: !value "jenkins_Server_Jenkins_server_password"
 - template: Jenkins_Task_Template
   scheduledStartDate: 2026-02-27T09:00:00+05:30
+  dueDate: 2026-02-27T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: Jenkins_task
       type: jenkins.Build
-      jenkinsServer: Jenkins_server
+      variableMapping:
+        pythonScript.jenkinsServer: "${jenkins-server-var}"
   variables:
   - type: xlrelease.ReferenceVariable
     key: jenkins-server-var
     requiresValue: false
     showOnReleaseStart: false
-    value: Configuration/Custom/Configuration9e5cb950e17c4daab865dc4b95d9ab94
+    value: Jenkins_server
     referencedType: jenkins.Server
   riskProfile: Default risk profile
 - notifications:
@@ -252,70 +254,70 @@ metadata:
 spec:
 - directory: "."
   teams:
-  - name: Folder Owner
-    users:
-    - admin
-    permissions:
-    - folder#edit_variables
-    - delivery_pattern#edit
-    - folder#edit_configuration
-    - delivery#edit
-    - folder#view_versions
-    - folder#apply_changes
-    - group#view
-    - folder#edit_versions
-    - folder#edit_notifications
-    - delivery_pattern#view
-    - group#edit
-    - delivery#view
-    - delivery#edit_tracked_item
-    - folder#view
-    - folder#edit_security
-    - dashboard#edit
-    - folder#edit
-    - dashboard#view
-    - folder#generate_configuration
   - name: Template Owner
     users:
     - admin
     permissions:
-    - template#create_release_other_folder
-    - template#edit
-    - trigger#view_trigger
-    - template#lock_task
-    - template#view
     - folder#view
-    - template#edit_security
-    - template#create_release
-    - template#edit_triggers
+    - trigger#view_trigger
+    - template#edit
     - template#edit_precondition
     - template#edit_failure_handler
+    - template#lock_task
+    - template#edit_security
+    - template#edit_triggers
+    - template#create_release_other_folder
+    - template#create_release
+    - template#view
   - name: Release Admin
     users:
     - admin
     permissions:
+    - release#lock_task
+    - release#reassign_task
+    - release#edit_task_description
+    - release#start
+    - release#edit_task_flag
+    - trigger#view_trigger
+    - release#abort
     - release#edit_precondition
-    - release#edit
-    - release#advance_task_transition
+    - release#edit_task_configuration_facet
+    - release#edit_blackout
+    - release#edit_task_dates
+    - release#edit_task_input_output_properties
+    - release#edit_task_attachments
     - release#edit_security
     - release#restart_phase
-    - release#lock_task
-    - folder#view
     - release#edit_task_script
-    - release#edit_task_configuration_facet
-    - release#edit_task_flag
-    - release#edit_task_dates
-    - release#edit_task
-    - release#edit_task_attachments
-    - release#task_transition
-    - trigger#view_trigger
-    - release#reassign_task
-    - release#edit_task_input_output_properties
-    - release#edit_task_tags
-    - release#edit_task_description
-    - trigger#edit_trigger
     - release#view
-    - release#start
-    - release#edit_blackout
+    - release#edit
     - release#edit_failure_handler
-    - release#abort
+    - release#edit_task_tags
+    - release#task_transition
+    - release#advance_task_transition
+    - folder#view
+    - release#edit_task
+    - trigger#edit_trigger
+  - name: Folder Owner
+    users:
+    - admin
+    permissions:
+    - delivery#view
+    - dashboard#edit
+    - folder#edit_notifications
+    - folder#edit_versions
+    - delivery#edit_tracked_item
+    - folder#edit_security
+    - folder#edit_variables
+    - folder#edit
+    - delivery_pattern#view
+    - dashboard#view
+    - delivery_pattern#edit
+    - folder#generate_configuration
+    - delivery#edit
+    - folder#view_versions
+    - folder#view
+    - folder#edit_configuration
+    - group#edit
+    - group#view
+    - folder#apply_changes
