@@ -1,0 +1,17 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: A2/A3/A4/A5
+  home: S127327Test/A2/A3/A4/A5
+spec:
+- name: A2-A5
+  type: time.Schedule
+  releaseTitle: ReleaseInA1BFolder
+  template: Template4
+  releaseFolder: ../../../../A1/A1A/A1B
+  periodicity: 0 0 */10 * * *
+  enabled: false

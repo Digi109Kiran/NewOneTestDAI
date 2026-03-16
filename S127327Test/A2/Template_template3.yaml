@@ -1,0 +1,20 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: A2
+  home: S127327Test/A2
+spec:
+- template: Template3
+  scheduledStartDate: 2026-01-07T19:30:00+05:30
+  dueDate: 2026-01-07T20:30:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: m1
+      type: xlrelease.Task
+  riskProfile: Default risk profile
+  author: admin

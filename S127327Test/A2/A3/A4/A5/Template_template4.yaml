@@ -1,0 +1,55 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: A2/A3/A4/A5
+  home: S127327Test/A2/A3/A4/A5
+spec:
+- template: Template4
+  scheduledStartDate: 2026-01-07T19:30:00+05:30
+  dueDate: 2026-01-07T20:30:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: m1
+      type: xlrelease.Task
+    - name: crtA5
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: CRTA5
+      template: ../../../../A1/Template2
+      folder: ../../../../A1
+    - name: OutOfScope
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: OutOfScope
+      template: ANew/Template1
+      folder: ANew
+  extensions:
+  - name: Dashboard
+    type: xlrelease.Dashboard
+    owner: admin
+    tiles:
+    - name: Release progress
+      type: xlrelease.ReleaseProgressTile
+    - name: Release summary
+      type: xlrelease.ReleaseSummaryTile
+    - name: Resource usage
+      type: xlrelease.ResourceUsageTile
+    - name: Release timeline
+      type: xlrelease.TimelineTile
+    - name: Release health
+      type: xlrelease.ReleaseHealthTile
+    - name: Release automation
+      type: xlrelease.ReleaseAutomationTile
+    - name: Deployment activity
+      type: deployment.DeploymentsActivityTile
+      row: 3
+      col: 0
+      filters:
+      - type: xlrelease.FolderFilter
+        folder: ../../../../A1/A1A
+      - type: xlrelease.DateFilter
+  riskProfile: Default risk profile
+  author: admin

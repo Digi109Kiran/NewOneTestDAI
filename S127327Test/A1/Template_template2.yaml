@@ -1,0 +1,23 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: A1
+  home: S127327Test/A1
+spec:
+- template: Template2
+  scheduledStartDate: 2026-01-07T19:30:00+05:30
+  dueDate: 2026-01-07T20:30:00+05:30
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: crt3
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: crt3
+      template: ./A1A/A1B/A1BTemplate
+      folder: ./A1A/A1B
+  riskProfile: Default risk profile
+  author: admin
