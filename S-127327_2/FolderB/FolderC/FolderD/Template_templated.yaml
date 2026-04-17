@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: TemplateD
   scheduledStartDate: 2026-04-17T09:00:00+05:30
+  dueDate: 2026-04-17T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
@@ -21,7 +22,6 @@ spec:
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: ../TemplateC
       folder: ..
     - name: CRT3
       type: xlrelease.CreateReleaseTask

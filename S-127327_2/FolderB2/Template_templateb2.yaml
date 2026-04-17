@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: TemplateB2
   scheduledStartDate: 2026-04-17T09:00:00+05:30
+  dueDate: 2026-04-17T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
