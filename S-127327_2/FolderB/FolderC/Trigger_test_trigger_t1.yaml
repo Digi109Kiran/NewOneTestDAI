@@ -1,0 +1,17 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      26.3.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: FolderB/FolderC
+  home: FolderA/FolderB/FolderC
+spec:
+- name: Test_Trigger_T1
+  type: time.Schedule
+  releaseTitle: RAC
+  template: TemplateC
+  releaseFolder: ./
+  periodicity: /10 * * * * *
+  enabled: false
