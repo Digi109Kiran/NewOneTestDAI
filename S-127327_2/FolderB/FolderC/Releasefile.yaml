@@ -8,3 +8,4 @@ spec:
   imports:
   - Notifications.yaml
   - Template_templatec.yaml
+  - Template_test1.yaml

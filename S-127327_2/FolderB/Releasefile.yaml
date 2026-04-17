@@ -8,3 +8,4 @@ spec:
   imports:
   - Notifications.yaml
   - Template_templateb.yaml
+  - Template_templateb_with_slashes.yaml
