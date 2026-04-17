@@ -22,10 +22,12 @@ spec:
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      folder: ..
+      template: ../templateb\/with\/slashes
+      folder: ../../FolderB2
     - name: CRT3
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
+      template: ../../FolderB2/templateb2\/with\/slashes
       folder: ../../FolderB2
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_TemplateC_scriptUserPassword"

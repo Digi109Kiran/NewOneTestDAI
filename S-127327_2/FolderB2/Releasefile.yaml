@@ -9,4 +9,3 @@ spec:
   - Notifications.yaml
   - Template_templateb2.yaml
   - Template_templateb2_with_slashes.yaml
-  - Template_templateb_with_slashes.yaml

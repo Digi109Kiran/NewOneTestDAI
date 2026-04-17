@@ -5,8 +5,8 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: FolderB2
-  home: FolderA/FolderB2
+  path: FolderB
+  home: FolderA/FolderB
 spec:
 - template: templateb/with/slashes
   scheduledStartDate: 2026-04-17T09:00:00+05:30
