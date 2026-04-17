@@ -5,7 +5,7 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: FolderD
+  path: FolderB/FolderC/FolderD
   home: FolderA/FolderB/FolderC/FolderD
 spec:
 - template: TemplateD
@@ -16,8 +16,8 @@ spec:
     - name: CRT1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: FolderA/FolderB/TemplateB
-      folder: FolderA/FolderB
+      template: ../../TemplateB
+      folder: ../..
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC

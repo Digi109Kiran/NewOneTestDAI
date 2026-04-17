@@ -5,7 +5,7 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: FolderD
+  path: FolderB/FolderC/FolderD
   home: FolderA/FolderB/FolderC/FolderD
 spec:
 - notifications:

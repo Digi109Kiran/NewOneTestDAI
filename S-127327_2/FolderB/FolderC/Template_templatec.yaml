@@ -5,7 +5,7 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: /
+  path: FolderB/FolderC
   home: FolderA/FolderB/FolderC
 spec:
 - template: TemplateC
@@ -16,13 +16,13 @@ spec:
     - name: CRT1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: FolderA/FolderB/TemplateB
-      folder: FolderA/FolderB
+      template: ../../FolderB2/TemplateB2
+      folder: ../../FolderB2
     - name: CRT2
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: FolderA/FolderB2/TemplateB2
-      folder: FolderA/FolderB2
+      template: ../../FolderB2/TemplateB2
+      folder: ../../FolderB2
   scriptUsername: admin
   scriptUserPassword: !value "xlrelease_Release_TemplateC_scriptUserPassword"
   riskProfile: Default risk profile
