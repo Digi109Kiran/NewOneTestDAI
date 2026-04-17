@@ -5,7 +5,7 @@
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  path: FolderB/FolderC
+  path: /
   home: FolderA/FolderB/FolderC
 spec:
 - name: Test_Trigger_T1

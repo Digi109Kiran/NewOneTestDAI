@@ -6,4 +6,8 @@ apiVersion: xl-release/v1
 kind: Import
 spec:
   imports:
+  - Dashboard_dashboard_1.yaml
   - Notifications.yaml
+  - Template_templatec.yaml
+  - Template_test_t1.yaml
+  - Trigger_test_trigger_t1.yaml
