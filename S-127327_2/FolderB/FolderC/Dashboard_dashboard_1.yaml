@@ -18,7 +18,7 @@ spec:
     col: 0
     filters:
     - type: xlrelease.FolderFilter
-      folder: ../../FolderB2
+      folder: FolderA2
     - type: xlrelease.DateFilter
   - name: Active releases by risk
     type: live.ReleasesByRiskTile
