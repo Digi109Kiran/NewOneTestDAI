@@ -1,0 +1,22 @@
+# Exported from:        http://release-nightly.devops.dev.digitalai.cloud/
+# Release version:      26.3.0-beta.507
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: FolderA/FolderB/FolderC
+spec:
+- template: TemplateC
+  scheduledStartDate: 2026-05-07T03:30:00Z
+  phases:
+  - phase: New Phase
+    tasks:
+    - name: CR1
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: RB
+      template: FolderA/FolderB/TemplateB
+      folder: FolderA/FolderB
+  riskProfile: Default risk profile
+  author: kiran.sureshraaj@digital.ai
