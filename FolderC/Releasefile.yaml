@@ -1,6 +1,6 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
 # Release version:      25.3.5-SNAPSHOT
-# Date created:         Thu May 07 17:36:00 IST 2026
+# Date created:         Thu May 07 17:36:37 IST 2026
 
 ---
 apiVersion: xl-release/v1
@@ -9,3 +9,4 @@ spec:
   imports:
   - Notifications.yaml
   - Template_templatec.yaml
+  - Template_templatec2.yaml

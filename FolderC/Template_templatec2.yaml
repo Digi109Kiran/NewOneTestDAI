@@ -9,15 +9,12 @@ metadata:
   path: Folder C
   home: Folder A%2FFolder B%2FFolder C/Folder C
 spec:
-- template: TemplateC
+- template: TemplateC2
   scheduledStartDate: 2026-05-07T09:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
-    - name: CRT1
-      type: xlrelease.CreateReleaseTask
-      newReleaseTitle: RB
-      template: Folder A/Folder B/TemplateB
-      folder: Folder A/Folder B
+    - name: New task
+      type: xlrelease.Task
   riskProfile: Default risk profile
   author: admin
