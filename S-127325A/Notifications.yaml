@@ -9,17 +9,6 @@ metadata:
   home: S-127325/ChildA
 spec:
 - notifications:
-  - notification: TASK_OVERDUE
-    priority: High
-    subject: "[Release] ${release.title}: ${task.title}"
-    body: |-
-      The **${task.title}** task in the **${release.title}** release is overdue.
-
-      After the task is completed, please mark it as Completed in Release.
-    roles:
-    - Watcher
-    - Release Admin
-    - Task Owner
   - notification: AUDIT_REPORT_JOB_ABORTED
     priority: Normal
     subject: "[Release] Audit report was aborted"
@@ -38,6 +27,17 @@ spec:
     - Watcher
     - Release Admin
     - Task Team
+  - notification: TASK_OVERDUE
+    priority: High
+    subject: "[Release] ${release.title}: ${task.title}"
+    body: |-
+      The **${task.title}** task in the **${release.title}** release is overdue.
+
+      After the task is completed, please mark it as Completed in Release.
+    roles:
+    - Watcher
+    - Release Admin
+    - Task Owner
   - notification: MANUAL_TASK_STARTED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -47,7 +47,6 @@ spec:
       After the task is completed, please mark it as Completed in Release.
     roles:
     - Watcher
-    - Task Owner
   - notification: TASK_FAILED
     priority: High
     subject: "[Release] ${release.title}: ${task.title}"
@@ -59,7 +58,6 @@ spec:
       You can retry the task, reassign it to somebody else or abort the release.
     roles:
     - Watcher
-    - Task Team
     - Task Owner
   - notification: USER_MENTIONED
     priority: Normal
@@ -74,10 +72,6 @@ spec:
       **${comment.authorFullName}** commented on the **${task.title}** task in the **${release.title}** release:
 
       ${comment.text}
-    roles:
-    - Watcher
-    - Task Team
-    - Task Owner
   - notification: AUDIT_REPORT_JOB_FAILED
     priority: Normal
     subject: "[Release] Audit report has failed"
@@ -106,7 +100,6 @@ spec:
     roles:
     - Watcher
     - Release Admin
-    - Task Owner
   - notification: ACTIVE_TASK_UNASSIGNED
     priority: Normal
     subject: "[Release] ${release.title}: ${task.title}"
@@ -114,10 +107,6 @@ spec:
       The **${task.title}** task in the **${release.title}** release is active but not assigned to anyone anymore.
 
       Please assign the task to a user or a team.
-    roles:
-    - Watcher
-    - Task Team
-    - Task Owner
   - notification: RELEASE_FAILING
     priority: High
     subject: "[Release] ${release.title}"
@@ -154,7 +143,6 @@ spec:
       Please assign the task to a user or a team.
     roles:
     - Watcher
-    - Release Admin
   - notification: RELEASE_COMPLETED
     priority: Normal
     subject: "[Release] ${release.title}"
@@ -187,26 +175,12 @@ spec:
     priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been aborted."
-    bulkSubject: "[Release] Multiple releases aborted"
-    bulkBody: |-
-      The following releases have been aborted:
-
-      ${#releases}
-      * [${title}](${url})
-      ${/releases}
     roles:
     - Release Admin
   - notification: RELEASE_STARTED
     priority: Normal
     subject: "[Release] ${release.title}"
     body: "The **${release.title}** release has been started."
-    bulkSubject: "[Release] Multiple releases started"
-    bulkBody: |-
-      The following releases have been started:
-
-      ${#releases}
-      * [${title}](${url})
-      ${/releases}
     roles:
     - Release Admin
   - notification: ACTIVE_TASK_ASSIGNED
@@ -214,7 +188,3 @@ spec:
     subject: "[Release] ${release.title}: ${task.title}"
     body: "The active task **${task.title}** in the **${release.title}** release is\
       \ now assigned to ${task.ownerFullName}."
-    roles:
-    - Watcher
-    - Task Team
-    - Task Owner
