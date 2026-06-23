@@ -3,8 +3,10 @@
 
 ---
 apiVersion: xl-release/v1
-kind: Import
+kind: Templates
+metadata:
+  path: /
+  home: S-127325
 spec:
-  imports:
-  - Notifications.yaml
-  - Template_test_template_t1.yaml
+- notifications: []
+  inheritFromParent: true
