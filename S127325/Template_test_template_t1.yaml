@@ -10,6 +10,7 @@ metadata:
 spec:
 - template: Test_Template_T1
   scheduledStartDate: 2026-06-23T09:00:00+05:30
+  dueDate: 2026-06-23T10:00:00+05:30
   phases:
   - phase: New Phase
   riskProfile: Default risk profile
