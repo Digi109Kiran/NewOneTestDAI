@@ -1,5 +1,5 @@
 # Exported from:        http://Kirans-MacBook-Pro.local:5516/
-# Release version:      24.1.0
+# Release version:      26.1.2-503.130
 
 ---
 apiVersion: xl-release/v1
@@ -10,8 +10,8 @@ metadata:
 spec:
 - folderVariables:
   - type: xlrelease.StringVariable
-    key: folder.releaseFolderPath
-    value: Applications/Foldera1ed976a4efa48b2b87980947ef17716
-  - type: xlrelease.StringVariable
     key: folder.Template - Standard Change OPEN
-    value: Applications/Foldera1ed976a4efa48b2b87980947ef17716/Release37c0786a5021487bb9f936f3d68531de
+    value: Applications/Folderd55e66f9dbf94830837893db365720e3/Release420541c3e7aa408aa81bca5ef407ec33
+  - type: xlrelease.StringVariable
+    key: folder.releaseFolderPath
+    value: Applications/Folderd55e66f9dbf94830837893db365720e3
