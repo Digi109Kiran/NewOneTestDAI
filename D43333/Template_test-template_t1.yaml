@@ -10,13 +10,14 @@ metadata:
 spec:
 - template: Test-Template_T1
   scheduledStartDate: 2026-07-01T09:00:00+05:30
+  dueDate: 2026-07-01T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: T1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
-      template: "${folder.template-name}"
-      folder: ./
+      template: "${folder.Template - Standard Change OPEN}"
+      folder: "${folder.releaseFolderPath}"
   riskProfile: Default risk profile
   author: admin

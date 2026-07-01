@@ -10,5 +10,8 @@ metadata:
 spec:
 - folderVariables:
   - type: xlrelease.StringVariable
-    key: folder.template-name
-    value: Parent_Template
+    key: folder.Template - Standard Change OPEN
+    value: Applications/Foldera1ed976a4efa48b2b87980947ef17716/Release6e8c10b5308d403bac584dd15792d129
+  - type: xlrelease.StringVariable
+    key: folder.releaseFolderPath
+    value: Applications/Foldera1ed976a4efa48b2b87980947ef17716
