@@ -11,7 +11,7 @@ spec:
 - folderVariables:
   - type: xlrelease.StringVariable
     key: folder.releaseFolderPath
-    value: Applications/Folder0bbf68199f484e758b5fe83625a8d1af
+    value: Applications/Folderd55e66f9dbf94830837893db365720e3
   - type: xlrelease.StringVariable
     key: folder.Template - Standard Change OPEN
-    value: Applications/Folder0bbf68199f484e758b5fe83625a8d1af/Release1607b0280be142b6a232a69a2d360041
+    value: Applications/Folderd55e66f9dbf94830837893db365720e3/Release420541c3e7aa408aa81bca5ef407ec33
