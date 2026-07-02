@@ -17,8 +17,7 @@ spec:
     - name: CRT1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: Release_Test
-      template: "${folder.Template - Standard Change OPEN}"
-      folder: "${folder.releaseFolderPath}"
+      folder: ./
   scriptUsername: admin
   riskProfile: Default risk profile
   author: admin
