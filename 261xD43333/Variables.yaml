@@ -1,0 +1,17 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      26.1.6
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: D-43333
+spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.releaseFolderPath
+    value: Applications/Folder0bbf68199f484e758b5fe83625a8d1af
+  - type: xlrelease.StringVariable
+    key: folder.Template - Standard Change OPEN
+    value: Applications/Folder0bbf68199f484e758b5fe83625a8d1af/Release27f2c3b02bdc495680a4c5f4aae588e3

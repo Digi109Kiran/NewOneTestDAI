@@ -1,0 +1,12 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      26.1.6
+
+---
+apiVersion: xl-release/v1
+kind: Import
+spec:
+  imports:
+  - Notifications.yaml
+  - Template_crt_template_t1.yaml
+  - Template_parent_template.yaml
+  - Variables.yaml
