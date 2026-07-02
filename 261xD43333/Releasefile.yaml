@@ -7,6 +7,5 @@ kind: Import
 spec:
   imports:
   - Notifications.yaml
-  - Template_crt_template_t1.yaml
   - Template_parent_template.yaml
   - Variables.yaml
