@@ -10,12 +10,18 @@ metadata:
 spec:
 - template: Create_Template_T1
   scheduledStartDate: 2026-07-07T09:00:00+05:30
+  dueDate: 2026-07-07T10:00:00+05:30
   phases:
   - phase: New Phase
     tasks:
     - name: Task_T1
       type: xlrelease.CreateReleaseTask
       newReleaseTitle: RAC
+      template: "${folder.parent-template}"
+      folder: ./
+    - name: Task T2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: R2
       template: "${folder.parent-template}"
       folder: ./
   riskProfile: Default risk profile
