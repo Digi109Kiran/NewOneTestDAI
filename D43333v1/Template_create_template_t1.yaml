@@ -19,5 +19,10 @@ spec:
       newReleaseTitle: RAC
       template: "${folder.parent-template}"
       folder: "${folder.parent-template}"
+    - name: Task_T2
+      type: xlrelease.CreateReleaseTask
+      newReleaseTitle: RAC
+      template: "${folder.parent-template}"
+      folder: "${folder.parent-template}"
   riskProfile: Default risk profile
   author: admin
