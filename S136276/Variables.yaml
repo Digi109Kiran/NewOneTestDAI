@@ -1,0 +1,15 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-136276
+spec:
+- folderVariables:
+  - type: xlrelease.ReferenceVariable
+    key: folder.ref-var-jenkins
+    value: Jenkins Folder
+    referencedType: jenkins.Server
