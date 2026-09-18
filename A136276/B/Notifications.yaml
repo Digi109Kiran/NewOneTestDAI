@@ -1,0 +1,12 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: B
+  home: S-136276/A/B
+spec:
+- notifications: []
+  inheritFromParent: true
