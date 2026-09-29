@@ -1,0 +1,25 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      27.1.0-SNAPSHOT
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-137117
+spec:
+- name: Test_Trigger_Benz
+  type: events.EventBasedTrigger
+  mappedProperties:
+  - type: xlrelease.StringValue
+    targetProperty: releaseTitle
+    value: RAC
+  - type: xlrelease.StringValue
+    targetProperty: template
+    value: Test_Template_T1
+  - type: xlrelease.StringValue
+    targetProperty: releaseFolder
+    value: S-137117
+  triggerActionType: xlrelease.CreateReleaseFromTemplateAction
+  eventSource: Test-jdeere-endp
+  eventType: events.HttpRequestEvent
