@@ -1,0 +1,16 @@
+# Exported from:        http://Kirans-MacBook-Pro.local:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Templates
+metadata:
+  path: /
+  home: S-136626
+spec:
+- folderVariables:
+  - type: xlrelease.StringVariable
+    key: folder.test-var
+    value: test-01
+  - type: xlrelease.IntegerVariable
+    key: folder.test-number
