@@ -1,0 +1,16 @@
+# Exported from:        http://Kirans-MacBook-Pro:5516/
+# Release version:      24.1.0
+
+---
+apiVersion: xl-release/v1
+kind: Applications
+metadata:
+  path: /
+  home: Example2
+spec:
+- name: App-A
+  type: xlrelease.Application
+- name: App-B
+  type: xlrelease.Application
+- name: App-C
+  type: xlrelease.Application
